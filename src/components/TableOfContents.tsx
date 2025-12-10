@@ -164,7 +164,7 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
         
         {/* Bottom Sheet */}
         <div 
-          className={`fixed left-0 bottom-0 w-full max-h-[85vh] bg-white z-50 
+          className={`fixed left-0 bottom-0 w-full max-h-[60vh] bg-white z-50 
             transform transition-transform duration-300 ease-out
             rounded-t-3xl
             ${isOpen ? 'translate-y-0' : 'translate-y-full'}
