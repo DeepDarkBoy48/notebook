@@ -174,7 +174,7 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
             ✕
           </button>
           
-          <div className="pt-16 px-6 pb-8">
+          <div className="pt-[calc(4rem+env(safe-area-inset-top))] px-6 pb-[calc(2rem+env(safe-area-inset-bottom))]">
             {tocContent}
           </div>
         </div>
