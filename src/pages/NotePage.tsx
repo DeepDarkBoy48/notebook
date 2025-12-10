@@ -1,6 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { getNote } from '../lib/notes';
 import { TableOfContents, type TocItem } from '../components/TableOfContents';
 import { slugify } from '../lib/slugify';
@@ -34,6 +36,32 @@ export function NotePage() {
     });
 
     return result;
+  }, [note?.content]);
+
+  useEffect(() => {
+    // Function to reload widgets
+    const reloadWidgets = () => {
+      if ((window as any).twttr?.widgets) {
+        (window as any).twttr.widgets.load();
+      }
+    };
+
+    const scriptSrc = "https://platform.twitter.com/widgets.js";
+    const scriptId = 'twitter-widgets-script';
+    
+    // Check if we need to inject the script
+    // We check if window.twttr is available or if our script is already injected
+    if (!(window as any).twttr && !document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = scriptSrc;
+      script.async = true;
+      script.onload = reloadWidgets;
+      document.body.appendChild(script);
+    } else {
+      // Already present or loaded, just trigger reload
+      reloadWidgets();
+    }
   }, [note?.content]);
 
   // Helper to get text content from React children
@@ -107,7 +135,45 @@ export function NotePage() {
         </CodeBlock>
       );
     },
-    pre: ({ children }: any) => <>{children}</>
+    pre: ({ children }: any) => <>{children}</>,
+    table: ({ children, ...props }: any) => (
+      <div className="overflow-x-auto max-w-full my-8 border-4 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white">
+        <table className="min-w-full text-left text-sm" {...props}>
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({ children, ...props }: any) => (
+      <thead className="bg-yellow-400 border-b-4 border-black" {...props}>
+        {children}
+      </thead>
+    ),
+    tbody: ({ children, ...props }: any) => (
+      <tbody className="divide-y-2 divide-black bg-[#FFFDF5]" {...props}>
+        {children}
+      </tbody>
+    ),
+    tr: ({ children, ...props }: any) => (
+      <tr className="group hover:bg-pink-100 transition-colors duration-200" {...props}>
+        {children}
+      </tr>
+    ),
+    th: ({ children, ...props }: any) => (
+      <th 
+        className="px-6 py-4 font-black text-black uppercase tracking-wider border-r-2 border-black last:border-r-0" 
+        {...props}
+      >
+        {children}
+      </th>
+    ),
+    td: ({ children, ...props }: any) => (
+      <td 
+        className="px-6 py-4 font-bold text-black border-r-2 border-black last:border-r-0" 
+        {...props}
+      >
+        {children}
+      </td>
+    )
   };
 
   if (!note) {
@@ -115,25 +181,34 @@ export function NotePage() {
   }
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-      <article className="xl:col-start-2 xl:col-span-8 max-w-none mx-auto w-full space-y-8">
-        <header className="text-center space-y-4 border-b border-gray-200 dark:border-gray-800 pb-8">
-          <div className="space-x-2">
-            <span className="text-sm font-medium text-green-600 dark:text-green-400">
+    <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
+      <article className="xl:col-start-2 xl:col-span-8 max-w-none mx-auto w-full space-y-12">
+        <header className="text-center space-y-6 border-b-4 border-black pb-12">
+          <div className="space-x-4 flex justify-center items-center">
+            <span className="text-sm font-black text-black bg-yellow-400 px-3 py-1 border-2 border-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               {note.category}
             </span>
-            <span className="text-gray-300 dark:text-gray-600">•</span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
+            <span className="text-black font-black text-xl">•</span>
+            <span className="text-sm font-bold text-black uppercase tracking-wider">
               {note.date}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl md:text-6xl font-black text-black tracking-tight uppercase leading-[0.9]">
             {note.title}
           </h1>
         </header>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none prose-green prose-headings:font-bold prose-headings:tracking-tight prose-a:text-green-600 hover:prose-a:text-green-500 transition-colors">
-          <ReactMarkdown components={MarkdownComponents}>
+        <div className="prose prose-lg md:prose-xl prose-gray max-w-none 
+          prose-headings:font-black prose-headings:text-black prose-headings:uppercase prose-headings:tracking-tight
+          prose-h1:text-3xl md:prose-h1:text-5xl 
+          prose-h2:text-2xl md:prose-h2:text-4xl prose-h2:decoration-pink-500 prose-h2:underline prose-h2:decoration-4 prose-h2:underline-offset-4
+          prose-p:text-lg md:prose-p:text-xl prose-p:leading-relaxed
+          prose-a:text-black prose-a:bg-yellow-200 prose-a:px-1 prose-a:font-bold prose-a:no-underline hover:prose-a:bg-yellow-400 prose-a:border-b-2 prose-a:border-black
+          prose-strong:font-black prose-strong:text-black
+          prose-img:rounded-none prose-img:border-4 prose-img:border-black prose-img:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+          prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:bg-gray-50 prose-blockquote:p-6 prose-blockquote:not-italic prose-blockquote:font-bold
+          transition-colors">
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={MarkdownComponents}>
             {note.content}
           </ReactMarkdown>
         </div>

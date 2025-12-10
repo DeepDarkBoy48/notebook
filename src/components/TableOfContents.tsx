@@ -47,22 +47,22 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   }
 
   return (
-    <nav className="space-y-2">
-      <p className="font-semibold text-gray-900 dark:text-gray-100 mb-4">
+    <nav className="space-y-4 border-l-4 border-gray-200 pl-4 py-2 sticky top-24">
+      <p className="font-black text-black uppercase tracking-widest text-sm bg-yellow-400 inline-block px-2 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
         On this page
       </p>
-      <ul className="space-y-2 text-sm">
+      <ul className="space-y-3 text-sm font-bold">
         {headings.map((heading) => (
           <li
             key={heading.id}
-            style={{ paddingLeft: `${(heading.level - 1) * 1}rem` }}
+            style={{ paddingLeft: `${(heading.level - 1) * 0.5}rem` }}
           >
             <a
               href={`#${heading.id}`}
-              className={`block transition-colors duration-200 border-l-2 pl-3 ${
+              className={`block transition-all duration-200 border-l-4 pl-3 hover:translate-x-1 ${
                 activeId === heading.id
-                  ? 'border-green-600 text-green-600 dark:text-green-400 font-medium'
-                  : 'border-transparent text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'
+                  ? 'border-pink-500 text-black'
+                  : 'border-transparent text-gray-400 hover:text-black hover:border-black'
               }`}
               onClick={(e) => {
                 e.preventDefault();
