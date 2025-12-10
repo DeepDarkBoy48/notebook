@@ -17,3 +17,5 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 3. **防迷路**：因为很多黄网经常换网址，这里通常能找到最新的入口。
 
 **总结：** 就是一个**老司机带路的“安全入口”**，让你找片的时候少中病毒、少踩坑。
+
+[网站链接](https://theporndude.com/zh)
