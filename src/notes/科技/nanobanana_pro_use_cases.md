@@ -1,13 +1,13 @@
 ---
 title: Nanobanana Pro 使用案例
 date: 2025-12-09
-description: 一份关于Nanobanana Pro使用案例的记录
-image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/c7c230e4503e19952760dc89f8c8bba6.png
+description: 带你体验最有意思的🍌玩法
+image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/1661eef8db230f52bd07628bb7bca63c.png
 ---
 
 ## 1. 红色吐槽涂鸦
 
-<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/80e461c4df7bfec207f2d71931305de4.png" alt="image-20251210005408750"  />
+![image-20251210184207342](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/1661eef8db230f52bd07628bb7bca63c.png)
 
 **Prompt:**
 
@@ -17,7 +17,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 ## 2. 无敌少侠 meme
 
-![image-20251210005347351](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/c7c230e4503e19952760dc89f8c8bba6.png)
+![image-20251210184134479](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/125c85ef27ae54221616d93b38ded13e.png)
 **Prompt:**
 
 ```
