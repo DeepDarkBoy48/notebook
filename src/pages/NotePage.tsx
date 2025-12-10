@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -138,7 +138,7 @@ export function NotePage() {
     pre: ({ children }: any) => <>{children}</>,
     table: ({ children, ...props }: any) => (
       <div className="overflow-x-auto max-w-full my-8 border-4 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white">
-        <table className="min-w-full text-left text-sm" {...props}>
+        <table className="min-w-full text-left text-sm border-collapse !m-0 !p-0" {...props}>
           {children}
         </table>
       </div>
@@ -175,6 +175,9 @@ export function NotePage() {
       </td>
     )
   };
+
+  // Mobile TOC drawer state
+  const [isTocOpen, setIsTocOpen] = useState(false);
 
   if (!note) {
     return <div>Note not found</div>;
@@ -214,11 +217,37 @@ export function NotePage() {
         </div>
       </article>
 
+      {/* Desktop TOC sidebar */}
       <aside className="hidden xl:block xl:col-span-3">
         <div className="sticky top-24">
           <TableOfContents headings={headings} />
         </div>
       </aside>
+
+      {/* Mobile TOC button */}
+      {headings.length > 0 && (
+        <button
+          onClick={() => setIsTocOpen(true)}
+          className="fixed bottom-20 right-4 xl:hidden z-30
+            w-14 h-14 flex items-center justify-center
+            bg-yellow-400 border-4 border-black rounded-xl
+            shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+            hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]
+            active:translate-x-[4px] active:translate-y-[4px] active:shadow-none
+            transition-all duration-100"
+          aria-label="Open table of contents"
+        >
+          <span className="text-2xl">📑</span>
+        </button>
+      )}
+
+      {/* Mobile TOC drawer */}
+      <TableOfContents
+        headings={headings}
+        isMobile={true}
+        isOpen={isTocOpen}
+        onClose={() => setIsTocOpen(false)}
+      />
     </div>
   );
 }
