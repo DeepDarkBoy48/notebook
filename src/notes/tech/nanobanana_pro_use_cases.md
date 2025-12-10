@@ -8,7 +8,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 ## 1. 红色吐槽涂鸦
 
-![image-20251210005408750](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/80e461c4df7bfec207f2d71931305de4.png)
+<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/80e461c4df7bfec207f2d71931305de4.png" alt="image-20251210005408750"  />
 
 **Prompt:**
 

@@ -115,9 +115,24 @@ export function NotePage() {
       return <h6 id={id} {...props}>{children}</h6>;
     },
     img: ({ node, ...props }: any) => {
+        // Handle style attribute that comes as a string from raw HTML
+        let style = props.style;
+        if (typeof style === 'string') {
+            style = style.split(';').reduce((acc: any, rule: string) => {
+                const [key, value] = rule.split(':');
+                if (key && value) {
+                    // Convert kebab-case to camelCase
+                    const camelKey = key.trim().replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+                    acc[camelKey] = value.trim();
+                }
+                return acc;
+            }, {});
+        }
+
         return (
             <img
                 {...props}
+                style={style}
                 className="w-full h-auto rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 my-8"
             />
         );

@@ -74,7 +74,7 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
     const element = document.getElementById(headingId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      window.history.pushState(null, '', `#${headingId}`);
+      // Removed history.pushState to prevent back button issues
     }
     
     // Re-enable observer after scroll completes
