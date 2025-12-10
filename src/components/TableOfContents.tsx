@@ -138,6 +138,15 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
           </li>
         ))}
       </ul>
+      <button
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (isMobile && onClose) onClose();
+        }}
+        className="w-full mt-6 py-2 px-4 bg-gray-100 border-2 border-black font-bold text-sm uppercase hover:bg-yellow-400 transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px]"
+      >
+        Back to Top
+      </button>
     </nav>
   );
 
@@ -153,11 +162,12 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
           onClick={onClose}
         />
         
-        {/* Drawer */}
+        {/* Bottom Sheet */}
         <div 
-          className={`fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-white z-50 
+          className={`fixed left-0 bottom-0 w-full max-h-[85vh] bg-white z-50 
             transform transition-transform duration-300 ease-out
-            ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+            rounded-t-3xl
+            ${isOpen ? 'translate-y-0' : 'translate-y-full'}
             overflow-y-auto`}
         >
           {/* Close button */}
@@ -174,7 +184,7 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
             ✕
           </button>
           
-          <div className="pt-[calc(4rem+env(safe-area-inset-top))] px-6 pb-[calc(2rem+env(safe-area-inset-bottom))]">
+          <div className="pt-16 px-6 pb-[calc(2rem+env(safe-area-inset-bottom))]">
             {tocContent}
           </div>
         </div>
