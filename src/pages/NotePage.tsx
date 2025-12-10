@@ -219,7 +219,7 @@ export function NotePage() {
 
       {/* Desktop TOC sidebar */}
       <aside className="hidden xl:block xl:col-span-3">
-        <div className="sticky top-24">
+        <div className="sticky top-6">
           <TableOfContents headings={headings} />
         </div>
       </aside>
@@ -228,16 +228,20 @@ export function NotePage() {
       {headings.length > 0 && (
         <button
           onClick={() => setIsTocOpen(true)}
-          className="fixed bottom-20 right-4 xl:hidden z-30
-            w-14 h-14 flex items-center justify-center
-            bg-yellow-400 border-4 border-black rounded-xl
-            shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
-            hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]
-            active:translate-x-[4px] active:translate-y-[4px] active:shadow-none
+          className="fixed bottom-4 right-4 xl:hidden z-30
+            w-10 h-10 flex items-center justify-center
+            bg-white border-2 border-black rounded-lg
+            shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]
+            hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]
+            active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
             transition-all duration-100"
           aria-label="Open table of contents"
         >
-          <span className="text-2xl">📑</span>
+          <div className="flex flex-col space-y-1 w-4">
+            <span className="block h-0.5 w-full bg-black"></span>
+            <span className="block h-0.5 w-full bg-black"></span>
+            <span className="block h-0.5 w-full bg-black"></span>
+          </div>
         </button>
       )}
 

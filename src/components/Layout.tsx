@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { getAllNotes } from '../lib/notes';
 import { useState, useEffect } from 'react';
-import { ScrollToTop } from './ScrollToTop';
+
 
 export function Layout() {
   const notes = getAllNotes();
@@ -76,7 +76,7 @@ export function Layout() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 animate-fade-in">
         <Outlet />
       </main>
-      <ScrollToTop />
+
     </div>
   );
 }

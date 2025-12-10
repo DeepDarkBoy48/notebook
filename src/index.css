@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
-  
+
   /* Extend colors with our semantic names mapped to raw colors for now, 
      but we will use CSS variables in utilities for dynamic theming if needed.
      For now, direct mapping is safer for v4 auto-detection. */
@@ -11,20 +11,20 @@
 
 :root {
   /* Neo-Brutalism Palette */
-  --color-primary: #FF90E8; /* Vibrant Pink */
-  --color-secondary: #FFC900; /* Bright Yellow */
-  --color-accent: #00FF94; /* Neon Green */
-  
+  --color-primary: #ff90e8; /* Vibrant Pink */
+  --color-secondary: #ffc900; /* Bright Yellow */
+  --color-accent: #00ff94; /* Neon Green */
+
   --color-border: #000000;
   --color-shadow: #000000;
-  
-  --bg-app: #FFFDF5; /* Off-white/Cream for contrast */
-  --bg-card: #FFFFFF;
-  
+
+  --bg-app: #fffdf5; /* Off-white/Cream for contrast */
+  --bg-card: #ffffff;
+
   /* Retain some compatibility if needed, but override main ones */
   --color-primary-50: #fff0f5;
   --color-primary-100: #ffd6f0;
-  --color-primary-500: #FF90E8;
+  --color-primary-500: #ff90e8;
   --color-primary-600: #e070c8;
   --color-primary-700: #c050a8;
 }
@@ -41,5 +41,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
 
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

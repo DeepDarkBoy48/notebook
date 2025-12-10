@@ -92,8 +92,28 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
     return null;
   }
 
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!activeId || isMobile || isClickScrolling.current) return;
+
+    const activeElement = document.getElementById(`toc-${activeId}`);
+    if (activeElement && navRef.current) {
+        const navRect = navRef.current.getBoundingClientRect();
+        const activeRect = activeElement.getBoundingClientRect();
+
+        // Check if element is out of view
+        if (activeRect.bottom > navRect.bottom || activeRect.top < navRect.top) {
+            activeElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+  }, [activeId, isMobile]);
+
   const tocContent = (
-    <nav className={`space-y-4 ${!isMobile ? 'border-l-4 border-gray-200 pl-4 py-2' : ''}`}>
+    <nav 
+      ref={navRef}
+      className={`space-y-4 ${!isMobile ? 'border-l-4 border-gray-200 pl-4 py-2 max-h-[calc(100vh-3rem)] overflow-y-auto no-scrollbar pr-4' : ''}`}
+    >
       <p className="font-black text-black uppercase tracking-widest text-sm bg-yellow-400 inline-block px-2 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
         On this page
       </p>
@@ -101,6 +121,7 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
         {headings.map((heading) => (
           <li
             key={heading.id}
+            id={`toc-${heading.id}`}
             style={{ paddingLeft: `${(heading.level - 1) * 0.5}rem` }}
           >
             <a
@@ -135,7 +156,6 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
         {/* Drawer */}
         <div 
           className={`fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-white z-50 
-            border-l-4 border-black shadow-[-8px_0px_0px_0px_rgba(0,0,0,1)]
             transform transition-transform duration-300 ease-out
             ${isOpen ? 'translate-x-0' : 'translate-x-full'}
             overflow-y-auto`}
