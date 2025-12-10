@@ -133,7 +133,7 @@ export function NotePage() {
             <img
                 {...props}
                 style={style}
-                className="w-full h-auto rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 my-8"
+                className="max-w-full h-auto block mx-auto rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 my-8"
             />
         );
     },
@@ -211,9 +211,10 @@ export function NotePage() {
               {note.date}
             </span>
           </div>
-          <h1 className="text-3xl md:text-6xl font-black text-black tracking-tight uppercase leading-[0.9]">
-            {note.title}
-          </h1>
+          <h1 
+            className="text-3xl md:text-6xl font-black text-black tracking-tight uppercase leading-tight"
+            dangerouslySetInnerHTML={{ __html: note.title.replace(/\n/g, '<br />') }}
+          />
         </header>
 
         <div className="prose prose-lg md:prose-xl prose-gray max-w-none 

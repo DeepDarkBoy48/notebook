@@ -18,37 +18,32 @@ export function NoteCard({ note }: NoteCardProps) {
       className="group block h-full isolate"
     >
       <div className="h-full bg-white border-4 border-black transition-all duration-200 hover:-translate-y-2 hover:-translate-x-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col relative z-10">
-        {note.image && (
+{note.image && (
           <div className="relative w-full aspect-[16/9] overflow-hidden border-b-4 border-black bg-pink-100">
             <img 
               src={note.image} 
               alt={note.title}
               className="w-full h-full object-cover transition-all duration-300"
             />
-
-            
-            {/* Category Tag - Neo-Brutalist Style */}
-            <div className="absolute top-0 right-0 bg-yellow-400 border-l-4 border-b-4 border-black px-4 py-1">
-              <span className="text-sm font-black text-black uppercase tracking-tight">
-                {note.category}
-              </span>
-            </div>
           </div>
         )}
+
+        {/* Category Tag - Neo-Brutalist Style */}
+        <div className="absolute top-0 right-0 bg-yellow-400 border-l-4 border-b-4 border-black px-4 py-1 z-20">
+          <span className="text-sm font-black text-black uppercase tracking-tight">
+            {note.category}
+          </span>
+        </div>
         
         <div className="p-8 flex flex-col flex-1 bg-white">
           <div className="flex items-center gap-3 text-xs font-bold text-black/70 mb-4 uppercase tracking-widest pb-2 w-full">
             <span>{note.date}</span>
-            {!note.image && (
-               <>
-                <span className="text-black font-black">/ {note.category}</span>
-               </>
-            )}
           </div>
           
-          <h2 className="text-3xl font-black text-black mb-4 leading-tight uppercase group-hover:underline decoration-4 underline-offset-4 decoration-pink-500">
-            {note.title}
-          </h2>
+          <h2 
+            className="text-3xl font-black text-black mb-4 leading-tight uppercase group-hover:underline decoration-4 underline-offset-4 decoration-pink-500"
+            dangerouslySetInnerHTML={{ __html: note.title.replace(/\n/g, '<br />') }}
+          />
           
           <p className="text-gray-800 font-medium leading-relaxed line-clamp-3 text-base flex-1">
             {note.description}

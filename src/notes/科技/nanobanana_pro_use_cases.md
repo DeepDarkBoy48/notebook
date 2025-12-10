@@ -1,7 +1,6 @@
 ---
 title: Nanobanana Pro 使用案例
 date: 2025-12-09
-category: tech
 description: 一份关于Nanobanana Pro使用案例的记录
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/c7c230e4503e19952760dc89f8c8bba6.png
 ---
@@ -23,26 +22,5 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 ```
 人物主体换成海绵宝宝和胖大星
-```
-
-
-
-```python
-from typing import Union
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-uv run uvicorn main:app --port 8000
 ```
 
