@@ -27,30 +27,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 
 
-> awdawdw	
->
-> 这是一个测试
->
-> 哈哈
->
-> 啊无敌的哇
-
-
-$$
-1+2 =2
-$$
-
-
-1. # UV创建
-
-```Plain
-uv init
-uv add fastapi uvicorn
-```
-
-创建一个main.py
-
-```Python
+```python
 from typing import Union
 
 from fastapi import FastAPI
@@ -68,88 +45,4 @@ def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 uv run uvicorn main:app --port 8000
 ```
-
-1. # pip创建
-
-新建虚拟环境
-
-```Plain
-python3 -m venv .venv
-```
-
-激活虚拟环境
-
-```Plain
-source .venv/bin/activate
-```
-
-安装
-
-```Plain
-pip install "fastapi[standard]"
-```
-
-创建一个main.py
-
-```Python
-from typing import Union
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-```
-
-启动
-
-```Plain
-fastapi dev main.py
-{
-  "subtitles": [
-    {
-      "start": 2.16,
-      "end": 4.07,
-      "text": "Every breakthrough in model intelligence."
-    },
-    {
-      "start": 4.08,
-      "end": 6.95,
-      "text": "For coding encourages us to rethink what."
-    },
-    {
-      "start": 6.96,
-      "end": 10.79,
-      "text": "Development should look like."
-    },
-    {
-      "start": 221.04,
-      "end": 224.04,
-      "text": "All right."
-    }
-  ],
-  "format": "vtt"
-}
-```
-
-
-
-- [x] awdaw
-- [ ] Awdawd
-
-> [!TIP]
->
-> # awdawdwdawd
-
-> [!CAUTION]
->
-> awdawdaw
 

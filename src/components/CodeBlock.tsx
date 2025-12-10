@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface CodeBlockProps {
   inline?: boolean;
@@ -7,11 +9,22 @@ interface CodeBlockProps {
 }
 
 export function CodeBlock({ inline, className, children, ...props }: CodeBlockProps) {
-  const [isWrapped, setIsWrapped] = useState(true);
+  const [isWrapped, setIsWrapped] = useState(true); // Default to wrap enabled
   const [copied, setCopied] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Handle hydration mismatch by only rendering highlighter on client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const match = /language-(\w+)/.exec(className || '');
-  const language = match ? match[1] : '';
+  const language = match ? match[1] : 'text';
+
+  // Clean up content: remove leading/trailing newlines and potential wrapping backticks
+  // We use a regex that handles optional whitespace around the backticks
+  // Clean up content: aggressively remove leading/trailing backticks and any surrounding whitespace
+  const cleanContent = String(children).replace(/^[\s`]+|[\s`]+$/g, '');
 
   if (inline) {
     return (
@@ -22,9 +35,8 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
   }
 
   const handleCopy = async () => {
-    const text = String(children).replace(/\n$/, '');
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(cleanContent);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -32,12 +44,22 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
     }
   };
 
+  // Custom style overrides for the syntax highlighter to fit our aesthetic
+  const customStyle = {
+    margin: 0,
+    padding: 0,
+    background: 'transparent',
+    fontSize: '1.125rem', // text-lg (18px) - balanced size
+
+    lineHeight: '1.625',   // leading-relaxed
+  };
+
   return (
     <div className="relative my-8 group border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       {/* Header / Actions Bar */}
       <div className="flex items-center justify-between px-4 py-3 bg-yellow-400 border-b-4 border-black">
         <span className="text-xs font-black text-black uppercase tracking-widest font-sans">
-          {language || 'text'}
+          {language}
         </span>
         <div className="flex items-center space-x-2">
           {/* Wrap Toggle Button */}
@@ -79,9 +101,24 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
 
       {/* Code Content */}
       <div className={`bg-white p-5 overflow-x-auto ${isWrapped ? 'whitespace-pre-wrap' : 'whitespace-pre'}`}>
-        <code className={`block font-mono text-sm text-gray-700 leading-relaxed before:content-none after:content-none ${className}`} {...props}>
-          {children}
-        </code>
+        {isMounted ? (
+          <SyntaxHighlighter
+            style={oneLight}
+            language={language}
+            PreTag="div"
+            customStyle={customStyle}
+            codeTagProps={{
+              className: `font-mono text-sm`
+            }}
+            wrapLongLines={isWrapped}
+          >
+            {cleanContent}
+          </SyntaxHighlighter>
+        ) : (
+           <pre className={`font-mono text-sm text-gray-700 leading-relaxed ${className}`}>
+             {cleanContent}
+           </pre>
+        )}
       </div>
     </div>
   );
