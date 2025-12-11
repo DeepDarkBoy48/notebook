@@ -32,6 +32,12 @@ export function Layout() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-4">
+              <Link 
+                to="/"
+                className="px-6 py-2 border-2 border-black font-bold text-black bg-white hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 active:translate-y-1 active:shadow-none uppercase text-sm"
+              >
+                ALL
+              </Link>
               {categories.map(cat => (
                 <Link 
                   key={cat} 
@@ -59,6 +65,12 @@ export function Layout() {
         {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 w-full bg-white border-b-4 border-black shadow-[0px_4px_0px_0px_rgba(0,0,0,1)] py-4 animate-in slide-in-from-top-2 duration-200">
                <nav className="flex flex-col space-y-2 px-4">
+                 <Link 
+                   to="/"
+                   className="block text-center px-6 py-3 border-2 border-black font-bold text-black bg-white hover:bg-pink-400 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 active:translate-y-1 active:shadow-none uppercase text-lg"
+                 >
+                   ALL
+                 </Link>
                  {categories.map(cat => (
                    <Link 
                      key={cat} 

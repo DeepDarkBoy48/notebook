@@ -6,6 +6,7 @@ interface NoteCardProps {
     description: string;
     date: string;
     category: string;
+    subcategory?: string;
     slug: string;
     image?: string;
   };
@@ -28,12 +29,36 @@ export function NoteCard({ note }: NoteCardProps) {
           </div>
         )}
 
-        {/* Category Tag - Neo-Brutalist Style */}
-        <div className="absolute top-0 right-0 bg-yellow-400 border-l-4 border-b-4 border-black px-4 py-1 z-20">
-          <span className="text-sm font-black text-black uppercase tracking-tight">
-            {note.category}
-          </span>
+        {/* Category Tag - Slanted & Dynamic */}
+        <div className="absolute top-2 right-2 z-20 rotate-[3deg] group-hover:rotate-[6deg] transition-transform duration-200">
+           <div className="bg-yellow-400 border-2 border-black px-4 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <span className="text-sm font-black text-black uppercase tracking-tight">
+              {note.category}
+            </span>
+           </div>
         </div>
+
+        {/* Subcategory Tag - Stacked & Distinct */}
+        {note.subcategory && (
+          <div className="absolute top-14 right-4 z-10 rotate-[-3deg] group-hover:rotate-[-6deg] transition-transform duration-200">
+             <div className="bg-[#FF6B6B] border-2 border-black px-3 py-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+              <span className="text-xs font-black text-black uppercase tracking-wider">
+                {note.subcategory}
+              </span>
+             </div>
+          </div>
+        )}
+
+        {/* New Tag - Slanted & Highlighted */}
+        {note.date === new Date().toISOString().split('T')[0] && (
+           <div className="absolute -top-2 -left-2 z-30 rotate-[-6deg] group-hover:rotate-[-12deg] transition-transform duration-200">
+             <div className="bg-[#00FF94] border-2 border-black px-4 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+               <span className="text-sm font-black text-black uppercase tracking-widest">
+                 NEW!
+               </span>
+             </div>
+           </div>
+        )}
         
         <div className="p-8 flex flex-col flex-1 bg-white">
           <div className="flex items-center gap-3 text-xs font-bold text-black/70 mb-4 uppercase tracking-widest pb-2 w-full">

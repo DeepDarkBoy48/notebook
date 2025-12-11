@@ -4,6 +4,7 @@ const modules = import.meta.glob('../notes/**/*.md', { query: '?raw', import: 'd
 export interface Note {
   slug: string;
   category: string;
+  subcategory?: string;
   title: string;
   date: string;
   description: string;
@@ -67,21 +68,32 @@ function parseFrontmatter(text: string) {
 export const getAllNotes = (): Note[] => {
   return Object.entries(modules).map(([path, rawContent]) => {
     const { data, content, extractedDescription, extractedImage } = parseFrontmatter(rawContent as string);
-    // path is like "../notes/tech/react-hooks.md"
     const parts = path.split('/');
-    const category = parts[parts.length - 2];
+    // path is relative to src/lib, so it looks like: ../notes/Category/Subcategory/File.md
+    // OR ../notes/Category/File.md
+    // We need to handle both cases.
+    
+    // parts structure from split on "../notes/...":
+    // [.., notes, Category, File.md] -> length 4
+    // [.., notes, Category, SubCategory, File.md] -> length 5
+    
     const filename = parts[parts.length - 1];
+    const category = parts[parts.length - (parts.length > 4 ? 3 : 2)];
+    const subcategory = parts.length > 4 ? parts[parts.length - 2] : undefined;
     const slug = filename.replace('.md', '');
 
     return {
       slug,
       category,
+      subcategory,
       title: data.title || slug,
       date: data.date || '',
       description: data.description || extractedDescription,
       image: data.image || extractedImage,
       content
     };
+  }).sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 };
 
