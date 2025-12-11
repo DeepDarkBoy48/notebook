@@ -118,7 +118,19 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
         On this page
       </p>
       <ul className="space-y-3 text-sm font-bold">
-        {headings.map((heading) => (
+        {headings.map((heading) => {
+          const getHeadingColor = () => {
+             if (activeId === heading.id) return 'text-black';
+             
+             switch (heading.level) {
+               case 1: return 'text-black';
+               case 2: return 'text-pink-600'; 
+               case 3: return 'text-gray-500';
+               default: return 'text-gray-500';
+             }
+          };
+
+          return (
           <li
             key={heading.id}
             id={`toc-${heading.id}`}
@@ -128,15 +140,15 @@ export function TableOfContents({ headings, isMobile = false, isOpen = false, on
               href={`#${heading.id}`}
               className={`block transition-all duration-200 border-l-4 pl-3 hover:translate-x-1 ${
                 activeId === heading.id
-                  ? 'border-pink-500 text-black'
-                  : 'border-transparent text-gray-400 hover:text-black hover:border-black'
-              }`}
+                  ? 'border-pink-500'
+                  : 'border-transparent hover:text-black hover:border-black'
+              } ${getHeadingColor()}`}
               onClick={(e) => handleClick(e, heading.id)}
             >
               {heading.text}
             </a>
           </li>
-        ))}
+        )})}
       </ul>
       <button
         onClick={() => {
