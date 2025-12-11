@@ -186,3 +186,17 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 **总结：** **后庭花爱好者的“专卖店”**，不喜欢这个口味的请绕道。
 
 [点击前往](https://www.analgalore.com/)
+
+# 磁力猫
+
+![image-20251211101247250](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/2d24ce338b112f8f2a8850dd508b7186.png)
+
+**老牌的磁力搜索神器，资源丰富且坚挺。**
+
+1. **防走丢发布页**：正如界面所示，它提供专门的“地址发布页”，拥有多个备用域名（如 .xyz, .buzz 等）和邮箱获取方式，确保你随时能找到它。
+2. **磁力搜索**：功能强大的磁力搜索引擎，想找什么资源（电影、剧集、软件），基本都能搜到。
+3. **长期稳定**：是圈内比较知名的站点，虽然经常需要更换域名，但通过发布页总能找到最新入口。
+
+**总结：** **找资源的“雷达”**，记不住域名没关系，记住收藏发布页就行。
+
+[点击前往](https://clmclm.com)
