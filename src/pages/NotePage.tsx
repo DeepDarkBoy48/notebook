@@ -39,6 +39,11 @@ export function NotePage() {
   }, [note?.content]);
 
   useEffect(() => {
+    // Scroll to top when navigating to a new note
+    window.scrollTo(0, 0);
+  }, [category, slug]);
+
+  useEffect(() => {
     // Function to reload widgets
     const reloadWidgets = () => {
       if ((window as any).twttr?.widgets) {
