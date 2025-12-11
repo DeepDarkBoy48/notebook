@@ -5,7 +5,7 @@ description: 不适合工作的时候看
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/94cf108a5a8e70f754bcb49c8f6ba019.png
 ---
 
-# [Porn Dude](https://theporndude.com)
+# Porn Dude
 
 ![image-20251210184825770](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/94cf108a5a8e70f754bcb49c8f6ba019.png)
 
@@ -17,7 +17,9 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 **总结：** 就是一个**老司机带路的“安全入口”**，让你找片的时候少中病毒、少踩坑。
 
-# [IAFD](https://www.iafd.com/)
+[点击前往](https://theporndude.com)
+
+# IAFD
 
 ![image-20251211013409902](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/38c771e459424da0455a7b8942087a3b.png)
 
@@ -29,7 +31,9 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 **总结：** 就是一个**专为老司机准备的“学术资料库”**，用来鉴别、考据和收藏作品信息的必备工具。
 
-# [91porn](https://91porn.com/index.php)
+[点击前往](https://www.iafd.com/)
+
+# 91porn
 
 ![image-20251211014731447](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/04a547c4fbe3b1414a12c81c9dc6df28.png)
 
@@ -38,9 +42,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **真实感**：主要特色是国产、自拍、真实。很多视频都是用户自制的，虽然画质不如专业片，但胜在“真实”和“接地气”。
 2. **海量资源**：作为老牌网站，积累了大量的国产自拍资源。
 3. **吃瓜**：很多社会新闻的主角视频最后都会流落到这里。
-   **总结：** **国产区的大本营**，虽然界面复古，但内容无可替代。
 
-# [Camwhores](https://www.camwhores.tv/)
+**总结：** **国产区的大本营**，虽然界面复古，但内容无可替代。
+
+[点击前往](https://91porn.com/index.php)
+
+# Camwhores
 
 ![image-20251211014905649](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/2aa3bc6d483d6ec23885ccf8b1095ae6.png)
 
@@ -49,9 +56,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **录播集合**：专门收集各大直播平台（如 Chaturbate, MFC）的模特表演录像。
 2. **付费内容免费看**：很多主播的私密秀（Private Show）会被人录下来发到这里，相当于白嫖了付费内容。
 3. **分类细致**：虽然是录像，但标签打得很细，方便查找。
-   **总结：** **直播爱好者的“后悔药”**，错过了直播没关系，来这里看回放。
 
-# [Coomer](https://coomer.st/)
+**总结：** **直播爱好者的“后悔药”**，错过了直播没关系，来这里看回放。
+
+[点击前往](https://www.camwhores.tv/)
+
+# Coomer
 
 ![image-20251211014920247](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/3f3793ac23a4d3fb64d74245b3f088a5.png)
 
@@ -60,9 +70,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **破解付费**：专门搬运那些知名网红在 OnlyFans、Patreon 等平台发布的付费内容。
 2. **实时更新**：更新速度非常快，很多网红刚发的图包/视频，转头就能在这里找到。
 3. **完全免费**：主打一个“劫富济贫”，让没钱订阅的人也能看到网红的私密照。
-   **总结：** **国外网红的“免费搬运工”**，白嫖党的最爱。
 
-# [TokyoMotion](https://www.tokyomotion.net/)
+**总结：** **国外网红的“免费搬运工”**，白嫖党的最爱。
+
+[点击前往](https://coomer.st/)
+
+# TokyoMotion
 
 ![image-20251211014834473](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/0d8be89db3f612dc48a565af4e22a59b.png)
 
@@ -71,9 +84,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **短平快**：以短视频和动图为主，很多是推特（X）上的尺度视频搬运。
 2. **无修正**：这里有很多流出的无码内容，或者是通过技术手段去除马赛克的视频。
 3. **动图大赏**：如果你喜欢收藏高质量的色情 GIF，这里是天堂。
-   **总结：** **日系内容的“碎片化”天堂**，适合碎片时间刷一刷。
 
-# [Pornhub](https://www.pornhub.com/)
+**总结：** **日系内容的“碎片化”天堂**，适合碎片时间刷一刷。
+
+[点击前往](https://www.tokyomotion.net/)
+
+# Pornhub
 
 ![image-20251211014631392](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/2967dc85a8179c134cf88f4e61d79f86.png)
 
@@ -82,9 +98,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **大而全**：内容最丰富、分类最齐全、服务器最稳。
 2. **大数据推荐**：算法很强，推给你的片子往往都很懂你。
 3. **正规化**：越来越多的专业片商和认证模特入驻，画质高，体验好。
-   **总结：** **业界标杆，新手村首选**，不知道看什么的时候，上 P 站准没错。
 
-# [DZMM](https://www.dzmm.ai/)
+**总结：** **业界标杆，新手村首选**，不知道看什么的时候，上 P 站准没错。
+
+[点击前往](https://www.pornhub.com/)
+
+# DZMM
 
 ![image-20251211014813314](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/79e769862ff22f76358301d3dea2cae5.png)
 
@@ -93,9 +112,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **AI 生成**：利用 AI 技术生成各种风格的色情图片和视频。
 2. **角色扮演**：可以和 AI 角色进行大尺度的聊天互动（Chat），满足文字性幻想。
 3. **定制化**：想要什么样的身材、脸蛋、场景，全都可以通过 AI 生成。
-   **总结：** **未来的“赛博妓院”**，如果你对真人看腻了，不妨试试 AI。
 
-# [PikPak](https://mypikpak.com/zh-CN)
+**总结：** **未来的“赛博妓院”**，如果你对真人看腻了，不妨试试 AI。
+
+[点击前往](https://www.dzmm.ai/)
+
+# PikPak
 
 ![image-20251211014611099](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/f96716e8a86dff7ab0eb3bb74d789d47.png)
 
@@ -104,9 +126,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **磁力秒存**：可以直接把磁力链接（Magnet）秒存到云端，不仅速度快，而且**基本不屏蔽资源**。
 2. **在线播放**：存好的视频直接在线看，画质原盘，不用下载到本地。
 3. **配合 JavDB**：是 JavDB 等磁力站点的最佳搭档，找到链接直接丢进 PikPak 就能看。
-   **总结：** **老司机的“云盘军火库”**，解决“下载慢”和“没地方存”的终极方案。
 
-# [Hanime1](https://hanime1.me/)
+**总结：** **老司机的“云盘军火库”**，解决“下载慢”和“没地方存”的终极方案。
+
+[点击前往](https://mypikpak.com/zh-CN)
+
+# Hanime1
 
 ![image-20251211014546415](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/01128c58a416b783fff3425db7cfd60a.png)
 
@@ -115,9 +140,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **专注里番**：专门收录日本动画（Hentai Anime），资源极其丰富。
 2. **在线高清**：提供高质量的在线播放，加载速度快，且支持中文字幕。
 3. **界面友好**：界面干净，没有乱七八糟的弹窗广告，体验非常好。
-   **总结：** **二次元的“施法材料库”**，看里番，这就够了。
 
-# [MissAV](https://missav123.com/dm194/cn)
+**总结：** **二次元的“施法材料库”**，看里番，这就够了。
+
+[点击前往](https://hanime1.me/)
+
+# MissAV
 
 ![image-20251211015002439](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88d81e8066b47eaeeeed6ee49c74a8c9.png)
 
@@ -126,9 +154,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **无码专区**：以收集破解版及流出的无码日系 AV 著称，很多有码片这里能找到无码版。
 2. **每日更新**：新片更新速度极快，基本与日本发售同步。
 3. **中文字幕**：设有专门的中文字幕专区，对中文用户非常友好。
-   **总结：** **日系 AV 的“高清影院”**，画质党和无码党的首选。
 
-# [JavDB](https://javdb.com/)
+**总结：** **日系 AV 的“高清影院”**，画质党和无码党的首选。
+
+[点击前往](https://missav123.com/dm194/cn)
+
+# JavDB
 
 ![image-20251211014423820](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/3c9ab5bfd9cb830b795d3e3a795237c7.png)
 
@@ -137,9 +168,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **查番号**：资料最全，只要有番号，就能查到这片子的所有信息（封面、演员、片商）。
 2. **找磁力**：不仅是数据库，还聚合了全网的磁力链接，是找片源的第一站。
 3. **评分系统**：有类似豆瓣的评分和评论系统，帮你避开烂片（封面杀手）。
-   **总结：** **老司机的“百科全书 + 搜索引擎”**，配合 PikPak 食用效果更佳。
 
-# [AnalGalore](https://www.analgalore.com/)
+**总结：** **老司机的“百科全书 + 搜索引擎”**，配合 PikPak 食用效果更佳。
+
+[点击前往](https://javdb.com/)
+
+# AnalGalore
 
 ![image-20251211014502488](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/efcecee304c8aff7cc16b44b561c6d96.png)
 
@@ -148,4 +182,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 1. **专注肛交**：正如其名（Anal Galore），这里只有一种内容——肛交。
 2. **欧美重口**：内容多为欧美风格，比较硬核，适合口味较重的用户。
 3. **海量分类**：虽然只做一个品类，但把这个品类做到了极致，各种玩法都有。
-   **总结：** **后庭花爱好者的“专卖店”**，不喜欢这个口味的请绕道。
+
+**总结：** **后庭花爱好者的“专卖店”**，不喜欢这个口味的请绕道。
+
+[点击前往](https://www.analgalore.com/)
