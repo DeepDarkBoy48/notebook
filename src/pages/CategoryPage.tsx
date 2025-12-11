@@ -49,13 +49,13 @@ export function CategoryPage() {
 
   return (
     <div className="space-y-16">
-      <header className="border-b-4 border-black pb-8 flex flex-col gap-6 bg-yellow-400 p-8 border-4 -mx-4 md:-mx-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-1">
+      <header className="border-b-4 border-black pb-8 flex flex-col gap-4 md:gap-6 bg-yellow-400 p-4 md:p-8 border-4 -mx-4 md:-mx-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="text-sm font-black text-black tracking-widest uppercase mb-2 block bg-white inline-block px-2 border-2 border-black">Category</span>
-            <h1 className="text-5xl md:text-7xl font-black text-black tracking-tighter uppercase italic">{category}</h1>
+            <span className="text-xs md:text-sm font-black text-black tracking-widest uppercase mb-2 block bg-white inline-block px-2 border-2 border-black">Category</span>
+            <h1 className="text-4xl md:text-7xl font-black text-black tracking-tighter uppercase italic">{category}</h1>
           </div>
-          <p className="text-black font-bold text-xl bg-white px-4 py-2 border-2 border-black inline-block shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <p className="text-black font-bold text-lg md:text-xl bg-white px-3 py-1 md:px-4 md:py-2 border-2 border-black inline-block shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] self-start md:self-auto">
             {filteredNotes.length} {filteredNotes.length === 1 ? 'Article' : 'Articles'}
           </p>
         </div>
@@ -80,30 +80,39 @@ export function CategoryPage() {
 
         {/* Subcategory Filter Buttons */}
         {subcategories.length > 0 && (
-          <div className="flex flex-wrap gap-3 pt-4 border-t-2 border-black/10">
-            <button
-              onClick={() => setSelectedSubcategory(null)}
-              className={`px-6 py-2 border-2 border-black font-black uppercase text-sm tracking-wider transition-all duration-200 hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
-                selectedSubcategory === null 
-                  ? 'bg-black text-white' 
-                  : 'bg-white text-black hover:bg-gray-50'
-              }`}
-            >
-              All
-            </button>
-            {subcategories.map((sub) => (
+          <div className="relative -mx-4 md:mx-0 pt-4 border-t-2 border-black/10">
+            <div className="flex flex-nowrap overflow-x-auto md:flex-wrap gap-3 pb-2 md:pb-0 px-4 md:px-0 no-scrollbar">
               <button
-                key={sub}
-                onClick={() => setSelectedSubcategory(sub)}
-                className={`px-6 py-2 border-2 border-black font-black uppercase text-sm tracking-wider transition-all duration-200 hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
-                  selectedSubcategory === sub 
-                    ? 'bg-[#FF6B6B] text-black' 
-                    : 'bg-white text-black hover:bg-[#FF6B6B]/20'
+                onClick={() => setSelectedSubcategory(null)}
+                className={`flex-shrink-0 px-4 py-1.5 md:px-6 md:py-2 border-2 border-black font-black uppercase text-xs md:text-sm tracking-wider transition-all duration-200 hover:-translate-y-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
+                  selectedSubcategory === null 
+                    ? 'bg-black text-white' 
+                    : 'bg-white text-black hover:bg-gray-50'
                 }`}
               >
-                {sub}
+                All
               </button>
-            ))}
+              {subcategories.map((sub) => (
+                <button
+                  key={sub}
+                  onClick={() => setSelectedSubcategory(sub)}
+                  className={`flex-shrink-0 px-4 py-1.5 md:px-6 md:py-2 border-2 border-black font-black uppercase text-xs md:text-sm tracking-wider transition-all duration-200 hover:-translate-y-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
+                    selectedSubcategory === sub 
+                      ? 'bg-[#FF6B6B] text-black' 
+                      : 'bg-white text-black hover:bg-[#FF6B6B]/20'
+                  }`}
+                >
+                  {sub}
+                </button>
+              ))}
+            </div>
+            {/* Scroll Hint Gradient */}
+            {/* Scroll Hint Text */}
+            <div className="md:hidden flex justify-end mt-2 px-4 pointer-events-none">
+              <span className="text-xs font-black text-black bg-white border-2 border-black px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                ← 向左滑动查看更多分类
+              </span>
+            </div>
           </div>
         )}
       </header>
