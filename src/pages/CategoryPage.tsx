@@ -28,6 +28,10 @@ export function CategoryPage() {
   const [visibleCount, setVisibleCount] = useState(9);
 
   useEffect(() => {
+    setSelectedSubcategory(null);
+  }, [category]);
+
+  useEffect(() => {
     setVisibleCount(9);
   }, [category, selectedSubcategory]);
 
