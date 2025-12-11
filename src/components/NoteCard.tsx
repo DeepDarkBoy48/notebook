@@ -38,16 +38,7 @@ export function NoteCard({ note }: NoteCardProps) {
            </div>
         </div>
 
-        {/* Subcategory Tag - Stacked & Distinct */}
-        {note.subcategory && (
-          <div className="absolute top-14 right-4 z-10 rotate-[-3deg] group-hover:rotate-[-6deg] transition-transform duration-200">
-             <div className="bg-[#FF6B6B] border-2 border-black px-3 py-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-              <span className="text-xs font-black text-black uppercase tracking-wider">
-                {note.subcategory}
-              </span>
-             </div>
-          </div>
-        )}
+
 
         {/* New Tag - Slanted & Highlighted */}
         {note.date === new Date().toISOString().split('T')[0] && (
@@ -61,9 +52,7 @@ export function NoteCard({ note }: NoteCardProps) {
         )}
         
         <div className="p-8 flex flex-col flex-1 bg-white">
-          <div className="flex items-center gap-3 text-xs font-bold text-black/70 mb-4 uppercase tracking-widest pb-2 w-full">
-            <span>{note.date}</span>
-          </div>
+
           
           <h2 
             className="text-3xl font-black text-black mb-4 leading-tight uppercase group-hover:underline decoration-4 underline-offset-4 decoration-pink-500"
@@ -73,6 +62,15 @@ export function NoteCard({ note }: NoteCardProps) {
           <p className="text-gray-800 font-medium leading-relaxed line-clamp-3 text-base flex-1">
             {note.description}
           </p>
+
+          <div className="flex items-center gap-3 text-xs font-bold text-black/70 mt-6 uppercase tracking-widest w-full">
+            <span>{note.date}</span>
+            {note.subcategory && (
+              <span className="inline-block transform -rotate-2 bg-white text-sm text-black font-black border-2 border-black px-2 py-0.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                {note.subcategory}
+              </span>
+            )}
+          </div>
           
           <div className="mt-8 pt-4 border-t-4 border-black flex items-center justify-between text-base font-black text-black uppercase bg-yellow-50 -mx-8 -mb-8 p-5 group-hover:bg-yellow-400 transition-colors duration-200">
              <span>Read Article</span>
