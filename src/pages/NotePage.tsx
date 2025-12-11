@@ -133,6 +133,7 @@ export function NotePage() {
             <img
                 {...props}
                 style={style}
+                loading="lazy"
                 className="max-w-full h-auto block mx-auto rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 my-8"
             />
         );

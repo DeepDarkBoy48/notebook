@@ -24,6 +24,7 @@ export function NoteCard({ note }: NoteCardProps) {
             <img 
               src={note.image} 
               alt={note.title}
+              loading="lazy"
               className="w-full h-full object-cover transition-all duration-300"
             />
           </div>
