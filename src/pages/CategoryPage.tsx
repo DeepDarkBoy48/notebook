@@ -18,23 +18,18 @@ export function CategoryPage() {
   }, [allNotes]);
 
   // Filter notes based on selection
-  const [searchQuery, setSearchQuery] = useState('');
-  
   const filteredNotes = useMemo(() => {
     return allNotes.filter(note => {
       const matchSub = !selectedSubcategory || note.subcategory === selectedSubcategory;
-      const matchSearch = !searchQuery || 
-        note.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        note.description.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchSub && matchSearch;
+      return matchSub;
     });
-  }, [allNotes, selectedSubcategory, searchQuery]);
+  }, [allNotes, selectedSubcategory]);
 
   const [visibleCount, setVisibleCount] = useState(9);
 
   useEffect(() => {
     setVisibleCount(9);
-  }, [category, selectedSubcategory, searchQuery]);
+  }, [category, selectedSubcategory]);
 
   const visibleNotes = filteredNotes.slice(0, visibleCount);
 
@@ -49,7 +44,7 @@ export function CategoryPage() {
 
   return (
     <div className="space-y-16">
-      <header className="border-b-4 border-black pb-8 flex flex-col gap-4 md:gap-6 bg-yellow-400 p-4 md:p-8 border-4 -mx-4 md:-mx-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+      <header className="border-b-4 border-black pb-8 flex flex-col gap-4 md:gap-6 bg-yellow-400 p-4 md:p-8 border-4 -mx-4 md:-mx-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rotate-[1deg]">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <span className="text-xs md:text-sm font-black text-black tracking-widest uppercase mb-2 block bg-white inline-block px-2 border-2 border-black">Category</span>
@@ -60,28 +55,12 @@ export function CategoryPage() {
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="w-full max-w-md">
-           <div className="relative group">
-             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-               <svg className="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-               </svg>
-             </div>
-             <input
-                type="text"
-                className="block w-full pl-10 pr-3 py-3 border-2 border-black bg-white placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-black font-bold uppercase tracking-wide shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:translate-x-[2px] focus:translate-y-[2px] focus:shadow-none transition-all"
-                placeholder="Search notes..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-             />
-           </div>
-        </div>
+
 
         {/* Subcategory Filter Buttons */}
         {subcategories.length > 0 && (
-          <div className="relative -mx-4 md:mx-0 pt-4 border-t-2 border-black/10">
-            <div className="flex flex-nowrap overflow-x-auto md:flex-wrap gap-3 pb-2 md:pb-0 px-4 md:px-0 no-scrollbar">
+          <div className="relative -mx-4 md:mx-0 pt-6 mt-2 border-t-2 border-black/10">
+            <div className="flex flex-nowrap overflow-x-auto md:flex-wrap gap-4 pb-4 px-4 md:px-0 pt-1 no-scrollbar">
               <button
                 onClick={() => setSelectedSubcategory(null)}
                 className={`flex-shrink-0 px-4 py-1.5 md:px-6 md:py-2 border-2 border-black font-black uppercase text-xs md:text-sm tracking-wider transition-all duration-200 hover:-translate-y-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
@@ -108,11 +87,13 @@ export function CategoryPage() {
             </div>
             {/* Scroll Hint Gradient */}
             {/* Scroll Hint Text */}
-            <div className="md:hidden flex justify-end mt-2 px-4 pointer-events-none">
-              <span className="text-xs font-black text-black bg-white border-2 border-black px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                ← 向左滑动查看更多分类
-              </span>
-            </div>
+            {subcategories.length > 3 && (
+              <div className="md:hidden flex justify-end mt-2 px-4 pointer-events-none">
+                <span className="text-xs font-black text-black bg-white border-2 border-black px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  ← 向左滑动查看更多分类
+                </span>
+              </div>
+            )}
           </div>
         )}
       </header>

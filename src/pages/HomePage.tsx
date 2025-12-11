@@ -1,25 +1,16 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { getAllNotes } from '../lib/notes';
 import { NoteCard } from '../components/NoteCard';
 
 export function HomePage() {
   const notes = getAllNotes();
 
-  const [searchQuery, setSearchQuery] = useState('');
+
   const [visibleCount, setVisibleCount] = useState(9);
 
-  const filteredNotes = useMemo(() => {
-    return notes.filter(note => {
-      if (!searchQuery) return true;
-      const q = searchQuery.toLowerCase();
-      return (
-        note.title.toLowerCase().includes(q) ||
-        note.description.toLowerCase().includes(q)
-      );
-    });
-  }, [notes, searchQuery]);
+  const visibleNotes = notes.slice(0, visibleCount);
 
-  const visibleNotes = filteredNotes.slice(0, visibleCount);
+
 
   return (
     <div className="space-y-20 md:space-y-32">
@@ -36,28 +27,6 @@ export function HomePage() {
 
 
       <section className="space-y-12">
-        <div className="px-4 flex justify-center">
-            {/* Search Bar */}
-            <div className="w-full max-w-xl">
-               <div className="relative group">
-                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                   <svg className="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                   </svg>
-                 </div>
-                 <input
-                    type="text"
-                    className="block w-full pl-10 pr-3 py-4 border-4 border-black bg-white placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-black font-bold uppercase tracking-wide text-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] focus:translate-x-[4px] focus:translate-y-[4px] focus:shadow-none transition-all"
-                    placeholder="Search all notes..."
-                    value={searchQuery}
-                    onChange={(e) => {
-                        setSearchQuery(e.target.value);
-                        setVisibleCount(9); // Reset visible count on search
-                    }}
-                 />
-               </div>
-            </div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4">
           {visibleNotes.map((note) => (
@@ -65,7 +34,7 @@ export function HomePage() {
           ))}
         </div>
 
-        {visibleCount < filteredNotes.length && (
+        {visibleCount < notes.length && (
         <div className="flex justify-center pt-8">
           <button
             onClick={() => setVisibleCount(prev => prev + 9)}
