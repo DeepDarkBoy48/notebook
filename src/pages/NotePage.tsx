@@ -199,80 +199,129 @@ export function NotePage() {
 
   // Mobile TOC drawer state
   const [isTocOpen, setIsTocOpen] = useState(false);
+  // Pinned state for desktop
+  const [isTocPinned, setIsTocPinned] = useState(false);
+  // Track if padding is needed to avoid overlap
+  const [needsPadding, setNeedsPadding] = useState(false);
+
+  // Keep TOC open when pinned
+  useEffect(() => {
+    if (isTocPinned) {
+      setIsTocOpen(true);
+    }
+  }, [isTocPinned]);
+
+  // Detect if sidebar overlaps content and needs padding
+  useEffect(() => {
+    if (!isTocPinned) {
+      setNeedsPadding(false);
+      return;
+    }
+
+    const checkOverlap = () => {
+      const sidebarWidth = 320; // w-80 = 20rem = 320px
+      const contentMaxWidth = 896; // max-w-4xl = 56rem = 896px
+      const viewportWidth = window.innerWidth;
+      
+      // Content is centered, so its right edge is at: (viewport / 2) + (content / 2)
+      // Sidebar left edge is at: viewport - sidebarWidth
+      // Overlap occurs if content right edge > sidebar left edge
+      const contentWidth = Math.min(contentMaxWidth, viewportWidth - 64); // account for px-4/px-8 padding
+      const contentRightEdge = (viewportWidth / 2) + (contentWidth / 2);
+      const sidebarLeftEdge = viewportWidth - sidebarWidth;
+      
+      setNeedsPadding(contentRightEdge > sidebarLeftEdge - 32); // 32px gap
+    };
+
+    checkOverlap();
+    window.addEventListener('resize', checkOverlap);
+    return () => window.removeEventListener('resize', checkOverlap);
+  }, [isTocPinned]);
+
+  const handleTogglePin = () => {
+    setIsTocPinned(prev => !prev);
+  };
+
+  const handleCloseToc = () => {
+    if (isTocPinned) {
+      setIsTocPinned(false);
+    }
+    setIsTocOpen(false);
+  };
 
   if (!note) {
     return <div>Note not found</div>;
   }
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
-      <article className="xl:col-start-2 xl:col-span-7 max-w-none mx-auto w-full space-y-12">
-        <header className="text-center space-y-6 border-b-4 border-black pb-12">
-          <div className="space-x-4 flex justify-center items-center">
-            <span className="text-sm font-black text-black bg-yellow-400 px-3 py-1 border-2 border-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              {note.category}
-            </span>
-            <span className="text-black font-black text-xl">•</span>
-            <span className="text-sm font-bold text-black uppercase tracking-wider">
-              {note.date}
-            </span>
+    <div className={`relative min-h-screen transition-all duration-300 ${needsPadding ? 'pr-80' : ''}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article className="max-w-4xl mx-auto w-full space-y-12">
+          <header className="text-center space-y-6 border-b-4 border-black pb-12">
+            <div className="space-x-4 flex justify-center items-center">
+              <span className="text-sm font-black text-black bg-yellow-400 px-3 py-1 border-2 border-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                {note.category}
+              </span>
+              <span className="text-black font-black text-xl">•</span>
+              <span className="text-sm font-bold text-black uppercase tracking-wider">
+                {note.date}
+              </span>
+            </div>
+            <h1 
+              className="text-3xl md:text-6xl font-black text-black tracking-tight uppercase leading-tight"
+              dangerouslySetInnerHTML={{ __html: note.title.replace(/\n/g, '<br />') }}
+            />
+          </header>
+
+          <div className="prose prose-lg md:prose-xl prose-gray max-w-none 
+            prose-headings:font-black prose-headings:text-black prose-headings:uppercase prose-headings:tracking-tight
+            prose-h1:text-3xl md:prose-h1:text-5xl 
+            prose-h2:text-2xl md:prose-h2:text-4xl prose-h2:decoration-pink-500 prose-h2:underline prose-h2:decoration-4 prose-h2:underline-offset-4
+            prose-p:text-lg md:prose-p:text-xl prose-p:leading-relaxed
+            prose-a:text-black prose-a:bg-yellow-200 prose-a:px-1 prose-a:font-bold prose-a:no-underline hover:prose-a:bg-yellow-400 prose-a:border-b-2 prose-a:border-black
+            prose-strong:font-black prose-strong:text-black
+            prose-img:rounded-none prose-img:border-4 prose-img:border-black prose-img:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
+            prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:bg-gray-50 prose-blockquote:p-6 prose-blockquote:not-italic prose-blockquote:font-bold
+            transition-colors">
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={MarkdownComponents}>
+              {note.content}
+            </ReactMarkdown>
           </div>
-          <h1 
-            className="text-3xl md:text-6xl font-black text-black tracking-tight uppercase leading-tight"
-            dangerouslySetInnerHTML={{ __html: note.title.replace(/\n/g, '<br />') }}
-          />
-        </header>
+        </article>
+      </div>
 
-        <div className="prose prose-lg md:prose-xl prose-gray max-w-none 
-          prose-headings:font-black prose-headings:text-black prose-headings:uppercase prose-headings:tracking-tight
-          prose-h1:text-3xl md:prose-h1:text-5xl 
-          prose-h2:text-2xl md:prose-h2:text-4xl prose-h2:decoration-pink-500 prose-h2:underline prose-h2:decoration-4 prose-h2:underline-offset-4
-          prose-p:text-lg md:prose-p:text-xl prose-p:leading-relaxed
-          prose-a:text-black prose-a:bg-yellow-200 prose-a:px-1 prose-a:font-bold prose-a:no-underline hover:prose-a:bg-yellow-400 prose-a:border-b-2 prose-a:border-black
-          prose-strong:font-black prose-strong:text-black
-          prose-img:rounded-none prose-img:border-4 prose-img:border-black prose-img:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
-          prose-blockquote:border-l-4 prose-blockquote:border-black prose-blockquote:bg-gray-50 prose-blockquote:p-6 prose-blockquote:not-italic prose-blockquote:font-bold
-          transition-colors">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={MarkdownComponents}>
-            {note.content}
-          </ReactMarkdown>
-        </div>
-      </article>
-
-      {/* Desktop TOC sidebar */}
-      <aside className="hidden xl:block xl:col-span-4">
-        <div className="sticky top-6">
-          <TableOfContents headings={headings} />
-        </div>
-      </aside>
-
-      {/* Mobile TOC button */}
-      {headings.length > 0 && (
+      {/* TOC Toggle button - Floating right */}
+      {headings.length > 0 && !isTocPinned && (
         <button
           onClick={() => setIsTocOpen(true)}
-          className="fixed bottom-4 right-4 xl:hidden z-30
-            w-10 h-10 flex items-center justify-center
-            bg-white border-2 border-black rounded-lg
-            shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]
-            hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]
-            active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
-            transition-all duration-100"
+          className={`fixed right-0 top-32 z-30
+            flex items-center gap-2 px-3 py-3
+            bg-white border-l-4 border-y-2 border-black 
+            shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)]
+            hover:translate-x-[-2px] hover:shadow-[-2px_2px_0px_0px_rgba(0,0,0,1)]
+            active:translate-x-[0px] active:shadow-none
+            transition-all duration-200
+            rounded-l-xl
+            group
+            ${isTocOpen ? 'translate-x-[150%]' : 'translate-x-0'}
+          `}
           aria-label="Open table of contents"
         >
-          <div className="flex flex-col space-y-1 w-4">
-            <span className="block h-0.5 w-full bg-black"></span>
-            <span className="block h-0.5 w-full bg-black"></span>
-            <span className="block h-0.5 w-full bg-black"></span>
+          <div className="flex flex-col space-y-1.5 w-5">
+            <span className="block h-0.5 w-full bg-black group-hover:bg-pink-500 transition-colors"></span>
+            <span className="block h-0.5 w-full bg-black group-hover:bg-pink-500 transition-colors"></span>
+            <span className="block h-0.5 w-full bg-black group-hover:bg-pink-500 transition-colors"></span>
           </div>
         </button>
       )}
 
-      {/* Mobile TOC drawer */}
+      {/* TOC Sidebar Drawer */}
       <TableOfContents
         headings={headings}
-        isMobile={true}
         isOpen={isTocOpen}
-        onClose={() => setIsTocOpen(false)}
+        onClose={handleCloseToc}
+        isPinned={isTocPinned}
+        onTogglePin={handleTogglePin}
       />
     </div>
   );
