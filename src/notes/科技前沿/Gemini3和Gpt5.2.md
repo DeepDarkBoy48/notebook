@@ -7,12 +7,13 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ea5a2c16ed5b064d72f85deb5811998d.%28null%29)
 
-
 2025年12月，AI领域迎来了"双雄对决"——OpenAI紧急发布GPT-5.2，直接对标Google的Gemini 3 Pro。
 
 **核心结论**：GPT-5.2在逻辑推理和数学上碾压对手（AIME 2025满分），但创意写作"僵硬"、审查严格；Gemini 3 Pro凭借百万Token上下文和多模态能力成为很多人的"日用主力"，但代码生成容易"幻觉"。
 
 本文基于Reddit、X等社区的真实用户反馈，从六个维度对比这两款模型。
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/70763279e746a8fdda5e55bbe4b6781f.%28null%29)
 
 ***
 
@@ -34,8 +35,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 ***
 
-
-## 2. 编程与软件工程：开发者的“日用主力”之争
+## 2. 第一回合：编程与软件工程
 
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/c1d60402d828ee88b70aaafb22454782.%28null%29)
 
@@ -75,7 +75,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 ***
 
-## 3. 逻辑推理与数学：绝对理性的代价
+## 3. 第二回合：逻辑推理与数学
 
 OpenAI在“Code Red”行动中倾注最多资源的领域便是逻辑与数学。AIME 2025基准测试的100%得分是一个里程碑式的成就，它标志着大模型在竞赛级数学题上达到了“全知全能”的境界。但在真实世界中，这种能力的溢出效应带来了意想不到的副作用。
 
@@ -99,7 +99,7 @@ OpenAI在“Code Red”行动中倾注最多资源的领域便是逻辑与数学
 
 ***
 
-## 4. 创意写作与机器的“灵魂”：一场关于“脑叶切除”的辩论
+## 4. 第三回合：创意写作与机器的“灵魂”
 
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/4d85f5b9308bec368856778cd6cbe932.%28null%29)
 
@@ -129,7 +129,7 @@ OpenAI在“Code Red”行动中倾注最多资源的领域便是逻辑与数学
 
 ***
 
-## 5. 多模态交互与视觉理解：感官的战争
+## 5. 第四回合：多模态交互与视觉理解
 
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/a7c83d82fe66d1f20635049f2222e6eb.webp)
 
@@ -153,7 +153,7 @@ OpenAI并非毫无建树。GPT-5.2在“空间布局”和“图表推理”上�
 
 ***
 
-## 6. 经济学分析：API定价与ROI的博弈
+## 6. 第五回合：API性价比
 
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/5533d2b7eee6ff57e295fd075e3aef55.%28null%29)
 
@@ -185,7 +185,7 @@ Reddit上流传着“GPT-5.2比Gemini贵得多”的说法，但这其实是对P
 
 ***
 
-## 7. 生态系统与用户黏性：Google的“特洛伊木马”
+## 7. 第七回合：生态系统与用户黏性
 
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/f8c3b99aff0042ab79b575c42b6e6551.%28null%29)
 

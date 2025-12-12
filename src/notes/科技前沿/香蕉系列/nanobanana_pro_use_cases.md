@@ -38,13 +38,13 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 # 4. 修复不清晰的中文
 
-Gemini默认生成的是1k图片，乍一看写的还挺好，特别标题大字基本没有错误。但是放大看细节，很多的中文小子都模糊不清。
+Gemini默认生成的是1k图片，乍一看写的还挺好，特别大标题基本没有错误。但是放大看细节，很多的小字都模糊不清。
 
 <img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/190517da4bbadf0ccc3ed8fb95091295.%28null%29" alt="img" style="zoom: 33%;" />
 
 > **方法一**
 
-点击下载按钮，Gemini会下载完整2k图，中文效果会好很多
+点击下载按钮，Gemini会下载完整2k图，中文效果会好很多。
 
 ![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ca1fd9e1e7ee0940ffc39039bbda0b69.%28null%29)
 
