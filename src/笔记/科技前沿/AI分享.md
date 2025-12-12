@@ -1,7 +1,7 @@
 ---
-title: TOP 20 推特菩萨推荐
+title: TOP 20 AI博主推荐
 date: 2025-12-09
-description: 一份关于推特福利的分享
+description: 一份关于AI博主的分享
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/be9adf30a5f51c18d4d63c013d2a64a0.png
 ---
 

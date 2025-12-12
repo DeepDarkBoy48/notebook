@@ -14,16 +14,16 @@ export interface Note {
 
 function parseFrontmatter(text: string) {
   const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  
+
   if (!match) {
     // Try to extract title from first h1 if no frontmatter
     const titleMatch = text.match(/^#\s+(.+)$/m);
     const title = titleMatch ? titleMatch[1] : '';
     const imageMatch = text.match(/!\[.*?\]\((.*?)\)/);
     const description = text.replace(/^#\s+.+$/m, '').trim().split('\n')[0] || '';
-    
-    return { 
-      data: { title }, 
+
+    return {
+      data: { title },
       content: text,
       extractedDescription: description,
       extractedImage: imageMatch ? imageMatch[1] : undefined
@@ -72,11 +72,11 @@ export const getAllNotes = (): Note[] => {
     // path is relative to src/lib, so it looks like: ../notes/Category/Subcategory/File.md
     // OR ../notes/Category/File.md
     // We need to handle both cases.
-    
+
     // parts structure from split on "../notes/...":
     // [.., notes, Category, File.md] -> length 4
     // [.., notes, Category, SubCategory, File.md] -> length 5
-    
+
     const filename = parts[parts.length - 1];
     const category = parts[parts.length - (parts.length > 4 ? 3 : 2)];
     const subcategory = parts.length > 4 ? parts[parts.length - 2] : undefined;

@@ -36,3 +36,32 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 现在做一个图，内容是用户输入的原图和模型输出ai图的对比图，根据图片的比例和大小采用合适的排列形式，比如上下排列、左右排列或者其他更加有趣的排列方式，内容基于之前的对话内容。不需要文字注释。尽量让两个拼图占满空间
 ```
 
+# 4. 修复不清晰的中文
+
+Gemini默认生成的是1k图片，乍一看写的还挺好，特别标题大字基本没有错误。但是放大看细节，很多的中文小子都模糊不清。
+
+<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/190517da4bbadf0ccc3ed8fb95091295.%28null%29" alt="img" style="zoom: 33%;" />
+
+> **方法一**
+
+点击下载按钮，Gemini会下载完整2k图，中文效果会好很多
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ca1fd9e1e7ee0940ffc39039bbda0b69.%28null%29)
+
+> **方法二**
+
+如果下载的2k图还是不清晰，这时候我们可以采用直接vibe对话的方式让他修复不清晰的中文。
+
+注意：仍然要点击下载按钮下载2k图
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/5ce1375fe74bd8ec42d67b66d11023b8.%28null%29)
+
+修复效果对比
+
+<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/271f6b4297bdafe9545b281194873390.%28null%29" alt="img" style="zoom: 50%;" />
+
+**Prompt:**
+
+```Plain
+修复不清晰的中文
+```
