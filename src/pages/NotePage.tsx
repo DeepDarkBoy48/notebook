@@ -206,7 +206,7 @@ export function NotePage() {
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
-      <article className="xl:col-start-2 xl:col-span-8 max-w-none mx-auto w-full space-y-12">
+      <article className="xl:col-start-2 xl:col-span-7 max-w-none mx-auto w-full space-y-12">
         <header className="text-center space-y-6 border-b-4 border-black pb-12">
           <div className="space-x-4 flex justify-center items-center">
             <span className="text-sm font-black text-black bg-yellow-400 px-3 py-1 border-2 border-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -240,7 +240,7 @@ export function NotePage() {
       </article>
 
       {/* Desktop TOC sidebar */}
-      <aside className="hidden xl:block xl:col-span-3">
+      <aside className="hidden xl:block xl:col-span-4">
         <div className="sticky top-6">
           <TableOfContents headings={headings} />
         </div>
