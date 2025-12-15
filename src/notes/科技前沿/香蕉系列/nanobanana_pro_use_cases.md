@@ -15,6 +15,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 帮我生成图片：生成图片，把它打印出来，然后用红墨水疯狂地加上手写中文批注、涂鸦、乱画，（比如给他画小胡子/书呆子/恶魔造型，你可以增加更多造型），涂鸦的内容主要为吐槽他，还可以加点小剪贴画。原比例。
 ```
 
+<br>
+
+<br>
+
+<br>
+
 # 2. 无敌少侠 meme
 
 ![image-20251210184134479](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/125c85ef27ae54221616d93b38ded13e.png)
@@ -26,7 +32,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 **自定义Prompt**
 
-<fill-card text="主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]"></fill-card>
+<fill-card text="主体人物换成[人物A]和[人物B]"></fill-card>
 
 
 
@@ -49,6 +55,12 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 ```
 现在做一个图，内容是用户输入的原图和模型输出ai图的对比图，根据图片的比例和大小采用合适的排列形式，比如上下排列、左右排列或者其他更加有趣的排列方式，内容基于之前的对话内容。不需要文字注释。尽量让两个拼图占满空间
 ```
+
+<br>
+
+<br>
+
+<br>
 
 # 4. 修复不清晰的中文
 
