@@ -64,21 +64,21 @@ export function FillCard({ children, text, quote }: FillCardProps) {
   return (
     <div className="relative my-8 group border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-yellow-400 border-b-4 border-black">
-        <span className="text-xs font-black text-black uppercase tracking-widest font-sans">
+      <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-rose-500 to-red-500 border-b-4 border-black">
+        <span className="text-xs font-black text-white uppercase tracking-widest font-sans">
           FILL CARD
         </span>
         {/* Optional: Add header controls if needed, but keeping it clean to match CodeBlock mostly */}
       </div>
 
-      <div className="p-8 font-serif relative">
+      <div className="p-5 font-sans relative">
         {/* Quote Icon - Watermark (kept subtle) */}
         <div className="absolute top-4 left-4 text-6xl text-black/[0.03] pointer-events-none select-none font-serif leading-none font-black">
           “
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-xl leading-relaxed text-gray-900">
+        <div className="relative z-10 text-lg leading-relaxed text-gray-900 font-semibold">
           {segments.map((segment, index) => {
             if (segment.type === 'blank') {
               const placeholder = segment.content;
@@ -117,13 +117,13 @@ export function FillCard({ children, text, quote }: FillCardProps) {
              onClick={handleCopy}
              className={`flex items-center gap-2 px-4 py-2 text-sm font-bold border-2 border-black rounded-lg transition-all 
                ${copied 
-                 ? 'bg-[#E6FFFA] text-black shadow-[2px_2px_0px_0px_#000]' 
+                 ? 'bg-emerald-500 text-white shadow-[2px_2px_0px_0px_#000]' 
                  : 'bg-white text-black hover:bg-black hover:text-white shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]'
                }`}
           >
             {copied ? (
               <>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-green-600"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <span className="font-black">COPIED!</span>
               </>
             ) : (

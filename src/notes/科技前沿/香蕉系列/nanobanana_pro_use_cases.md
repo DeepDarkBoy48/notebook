@@ -26,7 +26,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 
 **自定义Prompt**
 
-<fill-card text="主体人物换成[人物A]和[人物B]"></fill-card>
+<fill-card text="主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]主体人物换成[人物A]和[人物B]"></fill-card>
 
 
 

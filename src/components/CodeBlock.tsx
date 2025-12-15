@@ -57,7 +57,7 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
   return (
     <div className="relative my-8 group border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       {/* Header / Actions Bar */}
-      <div className="flex items-center justify-between px-4 py-3 bg-yellow-400 border-b-4 border-black">
+      <div className="flex items-center justify-between px-4 py-2 bg-yellow-400 border-b-4 border-black">
         <span className="text-xs font-black text-black uppercase tracking-widest font-sans">
           {language}
         </span>
@@ -65,14 +65,14 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
           {/* Wrap Toggle Button */}
           <button
             onClick={() => setIsWrapped(!isWrapped)}
-            className={`p-1.5 rounded-lg transition-all duration-200 ${
+            className={`p-1.5 border-2 border-black rounded-md transition-all duration-200 ${
               isWrapped 
-                ? 'bg-emerald-50 text-emerald-600' 
-                : 'text-gray-400 hover:bg-gray-100 hover:text-gray-600'
+                ? 'bg-emerald-500 text-white shadow-[2px_2px_0px_0px_#000]' 
+                : 'bg-white text-black hover:bg-black hover:text-white shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]'
             }`}
             title="Toggle Wrap"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M3 6h18" />
               <path d="M3 12h15a3 3 0 1 1 0 6h-4" />
               <polyline points="16 16 14 18 16 20" />
@@ -82,15 +82,19 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
           {/* Copy Button */}
           <button
             onClick={handleCopy}
-            className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-all duration-200"
+            className={`p-1.5 border-2 border-black rounded-md transition-all duration-200 ${
+              copied 
+                ? 'bg-emerald-500 text-white shadow-[2px_2px_0px_0px_#000]' 
+                : 'bg-white text-black hover:bg-black hover:text-white shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]'
+            }`}
             title="Copy Code"
           >
             {copied ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
               </svg>
