@@ -21,8 +21,22 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 **Prompt:**
 
 ```
-人物主体换成海绵宝宝和胖大星
+主题人物换成海绵宝宝和胖大星
 ```
+
+**自定义Prompt**
+
+<fill-card text="主体人物换成[人物A]和[人物B]"></fill-card>
+
+
+
+<br>
+
+<br>
+
+<br>
+
+
 
 # 3. 原图和ai图的对比图
 
@@ -54,11 +68,11 @@ Gemini默认生成的是1k图片，乍一看写的还挺好，特别大标题基
 
 注意：仍然要点击下载按钮下载2k图
 
-![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/5ce1375fe74bd8ec42d67b66d11023b8.%28null%29)
+<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/5ce1375fe74bd8ec42d67b66d11023b8.%28null%29" alt="img"  />
 
 修复效果对比
 
-<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/271f6b4297bdafe9545b281194873390.%28null%29" alt="img" style="zoom: 50%;" />
+<img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/271f6b4297bdafe9545b281194873390.%28null%29" alt="img" style="zoom:33%;" />
 
 **Prompt:**
 

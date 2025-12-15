@@ -7,6 +7,7 @@ import { getNote } from '../lib/notes';
 import { TableOfContents, type TocItem } from '../components/TableOfContents';
 import { slugify } from '../lib/slugify';
 import { CodeBlock } from '../components/CodeBlock';
+import { FillCard } from '../components/FillCard';
 
 export function NotePage() {
   const { category, slug } = useParams();
@@ -135,12 +136,16 @@ export function NotePage() {
         }
 
         return (
-            <img
-                {...props}
-                style={style}
-                loading="lazy"
-                className="max-w-full h-auto block mx-auto rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 my-8"
-            />
+            <span className="block mx-auto my-8 w-fit not-prose">
+                <span className="block border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white overflow-hidden">
+                    <img
+                        {...props}
+                        style={style}
+                        loading="lazy"
+                        className="block max-w-full h-auto"
+                    />
+                </span>
+            </span>
         );
     },
     code: ({ node, className, children, ...props }: any) => {
@@ -194,7 +199,8 @@ export function NotePage() {
       >
         {children}
       </td>
-    )
+    ),
+    "fill-card": FillCard as any
   };
 
   // Mobile TOC drawer state

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入式演示页面</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            color: #333;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 { margin-top: 0; color: #2563eb; }
+        p { color: #666; }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        button:active { transform: scale(0.98); }
+        .success {
+            color: #16a34a;
+            margin-top: 1rem;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🎈 这是一个独立的 HTML 页面</h1>
+        <p>我也许是 public 文件夹里的一个文件，但可以通过 iframe 完美嵌入到 React 应用中！</p>
+        <button onclick="showMessage()">点击我试试</button>
+        <div id="msg" class="success">✨这种交互完全不需要 React 介入！✨</div>
+    </div>
+
+    <script>
+        function showMessage() {
+            var msg = document.getElementById('msg');
+            msg.style.display = 'block';
+            msg.style.animation = 'fadeIn 0.5s';
+        }
+    </script>
+</body>
+</html>
