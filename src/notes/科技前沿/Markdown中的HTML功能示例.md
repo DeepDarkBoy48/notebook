@@ -2,7 +2,7 @@
 title: Markdown中的HTML功能示例
 date: 2025-12-15
 description: 展示在Markdown文件中可以使用的各种HTML功能和技巧
-image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ea5a2c16ed5b064d72f85deb5811998d.%28null%29
+image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/324ad336440e0791d3984c1f36a7756f.png
 ---
 
 ## 1. 文字样式
@@ -14,6 +14,7 @@ image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img
 <span style="color: #9b59b6;">紫色文字</span>
 
 ### 渐变文字
+
 <span style="background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 1.5em;">
 这是渐变色文字效果
 </span>
