@@ -8,6 +8,7 @@ import { TableOfContents, type TocItem } from '../components/TableOfContents';
 import { slugify } from '../lib/slugify';
 import { CodeBlock } from '../components/CodeBlock';
 import { FillCard } from '../components/FillCard';
+import { MermaidBlock } from '../components/MermaidBlock';
 
 export function NotePage() {
   const { category, slug } = useParams();
@@ -154,6 +155,10 @@ export function NotePage() {
 
       if (language === 'fill-card' || language === 'fillcard') {
         return <FillCard text={String(children).replace(/\n$/, '')} />;
+      }
+
+      if (language === 'mermaid') {
+        return <MermaidBlock chart={String(children).replace(/\n$/, '')} />;
       }
 
       const isInline = !match && !String(children).includes('\n');
