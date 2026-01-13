@@ -9,10 +9,28 @@ interface FillCardProps {
 export function FillCard({ children, text, quote }: FillCardProps) {
   const [copied, setCopied] = useState(false);
 
+  // Helper to get text content from React children
+  const getTextFromChildren = (children: React.ReactNode): string => {
+    let text = '';
+    React.Children.toArray(children).forEach(child => {
+      if (typeof child === 'string') {
+        text += child;
+      } else if (typeof child === 'number') {
+        text += child.toString();
+      } else if (React.isValidElement(child)) {
+        const props = child.props as { children?: React.ReactNode };
+        if (props.children) {
+          text += getTextFromChildren(props.children);
+        }
+      }
+    });
+    return text;
+  };
+
   // Determine the content to process
   let rawContent = text || quote || '';
-  if (!rawContent && typeof children === 'string') {
-    rawContent = children;
+  if (!rawContent && children) {
+    rawContent = getTextFromChildren(children);
   }
 
   // Parse content into static text and blank segments
@@ -78,7 +96,7 @@ export function FillCard({ children, text, quote }: FillCardProps) {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-lg leading-relaxed text-gray-900 font-semibold">
+        <div className="relative z-10 text-lg leading-relaxed text-gray-900 font-medium font-mono whitespace-pre-wrap break-words">
           {segments.map((segment, index) => {
             if (segment.type === 'blank') {
               const placeholder = segment.content;

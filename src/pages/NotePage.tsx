@@ -149,7 +149,13 @@ export function NotePage() {
         );
     },
     code: ({ node, className, children, ...props }: any) => {
-      const match = /language-(\w+)/.exec(className || '');
+      const match = /language-([\w-]+)/.exec(className || '');
+      const language = match ? match[1] : '';
+
+      if (language === 'fill-card' || language === 'fillcard') {
+        return <FillCard text={String(children).replace(/\n$/, '')} />;
+      }
+
       const isInline = !match && !String(children).includes('\n');
       return (
         <CodeBlock
