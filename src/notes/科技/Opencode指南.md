@@ -58,33 +58,100 @@ graph TD
 
 在 Markdown 中玩转 HTML5 Canvas？在 Opencode 这里是可行的。以下是一个实时渲染的系统状态示例（依赖于渲染器的 HTML 兼容性）：
 
-<div align="center">
-  <canvas id="opencodeCanvas" width="400" height="100" style="border:1px solid #d3d3d3; border-radius: 8px; background: #fafafa;">
-    您的环境不支持 HTML5 Canvas。
-  </canvas>
-  <script>
-    const c = document.getElementById("opencodeCanvas");
-    const ctx = c.getContext("2d");
-    
-    // 渲染背景
-    ctx.fillStyle = "#f4f4f4";
-    ctx.fillRect(0, 0, 400, 100);
-    
-    // 品牌文字
-    ctx.font = "bold 22px 'Fira Code', monospace";
-    ctx.fillStyle = "#4c0519";
-    ctx.fillText("Opencode Engine Active", 70, 58);
-    
-    // 动态状态点
+```canvas
+// --- Game of Thrones: The Revelation ---
+const width = canvas.width;
+const height = canvas.height;
+let frame = 0;
+
+// 粒子系统：雪花
+const snowflakes = Array.from({ length: 100 }, () => ({
+  x: Math.random() * width,
+  y: Math.random() * height,
+  radius: Math.random() * 2,
+  speed: 0.5 + Math.random()
+}));
+
+function draw() {
+  frame++;
+  
+  // 1. 背景：深邃的凛冬夜空
+  const bgGrade = ctx.createRadialGradient(width/2, height/2, 10, width/2, height/2, width);
+  bgGrade.addColorStop(0, '#1a1a2e');
+  bgGrade.addColorStop(1, '#0f0f1a');
+  ctx.fillStyle = bgGrade;
+  ctx.fillRect(0, 0, width, height);
+
+  // 2. 绘制环绕的太阳/星盘 (Astrolabe)
+  ctx.save();
+  ctx.translate(width / 2, height / 2);
+  
+  // 外环
+  const rings = [
+    { r: 100, speed: 0.01, color: '#c5a059', l: 10 },
+    { r: 85, speed: -0.015, color: '#a0854d', l: 5 },
+    { r: 70, speed: 0.02, color: '#8b7344', l: 3 }
+  ];
+
+  rings.forEach((ring, i) => {
+    ctx.save();
+    ctx.rotate(frame * ring.speed);
+    ctx.strokeStyle = ring.color;
+    ctx.lineWidth = ring.l;
     ctx.beginPath();
-    ctx.arc(50, 50, 10, 0, 2 * Math.PI);
-    ctx.fillStyle = "#10b981"; // 活力绿
+    ctx.arc(0, 0, ring.r, 0, Math.PI * 1.5); // 不闭合的环
+    ctx.stroke();
+    
+    // 环上的装饰刻度
+    for(let a=0; a<Math.PI*2; a+=Math.PI/4) {
+       ctx.fillStyle = ring.color;
+       ctx.fillRect(ring.r-5, -2, 10, 4);
+       ctx.rotate(Math.PI/4);
+    }
+    ctx.restore();
+  });
+
+  // 核心光芒
+  const sunGrade = ctx.createRadialGradient(0, 0, 0, 0, 0, 50);
+  sunGrade.addColorStop(0, '#fff');
+  sunGrade.addColorStop(0.2, '#ffdd44');
+  sunGrade.addColorStop(0.5, '#c5a059');
+  sunGrade.addColorStop(1, 'transparent');
+  ctx.fillStyle = sunGrade;
+  ctx.beginPath();
+  ctx.arc(0, 0, 50 + Math.sin(frame*0.05)*5, 0, Math.PI*2);
+  ctx.fill();
+  
+  ctx.restore();
+
+  // 3. 绘制文字：启示录
+  ctx.textAlign = 'center';
+  ctx.font = "900 48px 'Cinzel', serif"; // 假定字体，实际会回退到 serif
+  ctx.shadowBlur = 15;
+  ctx.shadowColor = "rgba(197, 160, 89, 0.5)";
+  ctx.fillStyle = '#c5a059';
+  ctx.fillText("THE REVELATION", width/2, height - 40);
+  ctx.shadowBlur = 0;
+
+  // 4. 动画雪花
+  ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+  snowflakes.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
     ctx.fill();
-  </script>
-</div>
+    p.y += p.speed;
+    p.x += Math.sin(frame * 0.01 + p.x) * 0.2;
+    if (p.y > height) p.y = -5;
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+```
 
 > [!TIP]
-> **小贴士**：在 Obsidian 或具备现代 HTML 解析能力的查看器中，上述 Canvas 脚本将直接渲染出动态的“运行中”状态。
+> **小贴士**：得益于我们最新的 `CanvasBlock` 组件，你现在可以直接在 Markdown 中编写原生的 JavaScript Canvas 代码，并获得实时的渲染预览，甚至可以直接导出为图片。
 
 ---
 

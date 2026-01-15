@@ -9,6 +9,7 @@ import { slugify } from '../lib/slugify';
 import { CodeBlock } from '../components/CodeBlock';
 import { FillCard } from '../components/FillCard';
 import { MermaidBlock } from '../components/MermaidBlock';
+import { CanvasBlock } from '../components/CanvasBlock';
 
 export function NotePage() {
   const { category, slug } = useParams();
@@ -159,6 +160,10 @@ export function NotePage() {
 
       if (language === 'mermaid') {
         return <MermaidBlock chart={String(children).replace(/\n$/, '')} />;
+      }
+
+      if (language === 'canvas') {
+        return <CanvasBlock code={String(children).replace(/\n$/, '')} />;
       }
 
       const isInline = !match && !String(children).includes('\n');
