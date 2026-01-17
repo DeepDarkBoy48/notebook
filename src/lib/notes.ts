@@ -10,6 +10,7 @@ export interface Note {
   description: string;
   image?: string;
   content: string;
+  isPublic?: string;
 }
 
 function parseFrontmatter(text: string) {
@@ -90,9 +91,12 @@ export const getAllNotes = (): Note[] => {
       date: data.date || '',
       description: data.description || extractedDescription,
       image: data.image || extractedImage,
-      content
+      content,
+      isPublic: data.isPublic
     };
-  }).sort((a, b) => {
+  })
+  .filter(note => note.isPublic !== '0')
+  .sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 };

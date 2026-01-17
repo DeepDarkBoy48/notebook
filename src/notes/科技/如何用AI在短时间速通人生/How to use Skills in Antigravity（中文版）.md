@@ -1,5 +1,5 @@
 ---
-title: 在Antigravity中使用Skills
+title: How to use Skills in Antigravity（中文版）
 date: 2026/01/14
 description: 技能是一种开放标准，用于扩展 Agent 的能力。技能是一个包含 SKILL.md 文件的文件夹，旨在让 Agent 在处理特定任务时遵循其中的指令。
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png
@@ -7,7 +7,7 @@ isPublic: 1
 ---
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png)
 
-# Agent 技能 (Skills)
+# How to use Skills in Antigravity（中文版）
 
 技能是扩展 Agent 能力的开放标准。一个“技能”就是一个文件夹，其中包含一个 `SKILL.md` 文件，里面记录了 Agent 在执行特定任务时可以遵循的指令。
 

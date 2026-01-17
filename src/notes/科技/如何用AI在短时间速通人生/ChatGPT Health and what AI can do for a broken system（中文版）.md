@@ -1,11 +1,11 @@
 ---
-title: ChatGPT健康版：AI如何重塑医疗体系
+title: ChatGPT Health and what AI can do for a broken system（中文版）
 date: 2026/01/17
 description: 医疗体系对患者和医生来说都已不堪重负，但 AI 工具能够提供帮助。
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/3f4273f54926c3de7abb07fe8333d1aa.png
 isPublic: 1
 ---
-# ChatGPT健康版：AI如何重塑医疗体系
+# ChatGPT Health and what AI can do for a broken system（中文版）
 
 医疗体系对患者和医生来说都已不堪重负，但 AI 工具能够提供帮助。
 
