@@ -1,30 +1,31 @@
 ---
-title: Markdown中的HTML功能示例
-date: 2025-12-15
-description: 展示在Markdown文件中可以使用的各种HTML功能和技巧
+title: "Markdown中的HTML功能示例"
+date: 2025/12/15
+description: "展示在Markdown文件中可以使用的各种HTML功能和技巧"
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/324ad336440e0791d3984c1f36a7756f.png
+isPublic: 1
 ---
-
 ## 1. 文字样式
 
 ### 彩色文字
-<span style="color: #e74c3c;">红色文字</span> · 
-<span style="color: #3498db;">蓝色文字</span> · 
-<span style="color: #2ecc71;">绿色文字</span> · 
-<span style="color: #9b59b6;">紫色文字</span>
+
+`<span style="color: #e74c3c;">`红色文字 ·
+`<span style="color: #3498db;">`蓝色文字 ·
+`<span style="color: #2ecc71;">`绿色文字 ·
+`<span style="color: #9b59b6;">`紫色文字
 
 ### 渐变文字
 
-<span style="background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 1.5em;">
+`<span style="background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 1.5em;">`
 这是渐变色文字效果
-</span>
 
 ### 高亮标注
-这是普通文字，<mark>这是高亮标注的重点内容</mark>，后面继续普通文字。
 
-<mark style="background: #ffeaa7; padding: 2px 6px; border-radius: 4px;">黄色高亮</mark>
-<mark style="background: #81ecec; padding: 2px 6px; border-radius: 4px;">青色高亮</mark>
-<mark style="background: #fab1a0; padding: 2px 6px; border-radius: 4px;">粉色高亮</mark>
+这是普通文字，`<mark>`这是高亮标注的重点内容`</mark>`，后面继续普通文字。
+
+`<mark style="background: #ffeaa7; padding: 2px 6px; border-radius: 4px;">`黄色高亮`</mark>`
+`<mark style="background: #81ecec; padding: 2px 6px; border-radius: 4px;">`青色高亮`</mark>`
+`<mark style="background: #fab1a0; padding: 2px 6px; border-radius: 4px;">`粉色高亮`</mark>`
 
 ---
 
@@ -84,9 +85,9 @@ console.log(greeting);
 
 ## 4. 键盘按键
 
-按下 <kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">Ctrl</kbd> + <kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">C</kbd> 复制
+按下 `<kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">`Ctrl`</kbd>` + `<kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">`C`</kbd>` 复制
 
-按下 <kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">⌘</kbd> + <kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">V</kbd> 粘贴
+按下 `<kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">`⌘`</kbd>` + `<kbd style="background: #eee; padding: 3px 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 0 #999; font-family: monospace;">`V`</kbd>` 粘贴
 
 ---
 
@@ -133,11 +134,11 @@ console.log(greeting);
 
 ## 7. 徽章标签
 
-<span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">HOT</span>
-<span style="background: #3498db; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">NEW</span>
-<span style="background: #2ecc71; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">推荐</span>
-<span style="background: #9b59b6; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">AI</span>
-<span style="background: #f39c12; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">重要</span>
+`<span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">`HOT
+`<span style="background: #3498db; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">`NEW
+`<span style="background: #2ecc71; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">`推荐
+`<span style="background: #9b59b6; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">`AI
+`<span style="background: #f39c12; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">`重要
 
 ---
 
@@ -203,7 +204,7 @@ console.log(greeting);
 
 ## 使用说明
 
-以上所有HTML代码都可以直接复制到任何Markdown笔记中使用。只需要将代码粘贴到你的`.md`文件中即可。
+以上所有HTML代码都可以直接复制到任何Markdown笔记中使用。只需要将代码粘贴到你的 `.md`文件中即可。
 
 <div style="background: #f0f0f0; padding: 20px; border-radius: 12px; text-align: center; margin-top: 30px;">
 <p style="margin: 0; font-size: 1.2em;">✨ 尽情发挥你的创意吧！</p>
