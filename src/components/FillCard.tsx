@@ -8,6 +8,7 @@ interface FillCardProps {
 
 export function FillCard({ children, text, quote }: FillCardProps) {
   const [copied, setCopied] = useState(false);
+  const [templateCopied, setTemplateCopied] = useState(false);
 
   // Helper to get text content from React children
   const getTextFromChildren = (children: React.ReactNode): string => {
@@ -77,82 +78,136 @@ export function FillCard({ children, text, quote }: FillCardProps) {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const handleCopyTemplate = () => {
+    navigator.clipboard.writeText(rawContent);
+    setTemplateCopied(true);
+    setTimeout(() => setTemplateCopied(false), 2000);
+  };
+
   if (!rawContent) return null;
 
   return (
-    <div className="relative my-8 group border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+    <div className="relative my-6 group border-[3px] border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden rounded-xl">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-rose-500 to-red-500 border-b-4 border-black">
-        <span className="text-xs font-black text-white uppercase tracking-widest font-sans">
-          FILL CARD
-        </span>
-        {/* Optional: Add header controls if needed, but keeping it clean to match CodeBlock mostly */}
+      <div className="flex items-center justify-between px-4 py-2.5 bg-[#FF4B4B] border-b-[3px] border-black">
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1">
+            <div className="w-2.5 h-2.5 rounded-full bg-white border-2 border-black"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-white/50 border-2 border-black"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-white/20 border-2 border-black"></div>
+          </div>
+          <span className="ml-2 text-xs font-black text-white uppercase tracking-[0.2em] font-sans drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)]">
+            Fill Card
+          </span>
+        </div>
+        <div className="flex items-center gap-1 opacity-50">
+          <div className="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
+          <div className="w-10 h-1 bg-white/20 rounded-full"></div>
+        </div>
       </div>
 
-      <div className="p-5 font-sans relative">
-        {/* Quote Icon - Watermark (kept subtle) */}
-        <div className="absolute top-4 left-4 text-6xl text-black/[0.03] pointer-events-none select-none font-serif leading-none font-black">
-          “
+      <div className="p-5 md:p-6 font-sans relative bg-[#FFFDF9]">
+        {/* Decorative Watermark - Reduced size */}
+        <div className="absolute top-2 right-4 text-[60px] text-red-500/[0.03] pointer-events-none select-none font-black italic leading-none">
+          FILL
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-lg leading-relaxed text-gray-900 font-medium font-mono whitespace-pre-wrap break-words">
-          {segments.map((segment, index) => {
-            if (segment.type === 'blank') {
-              const placeholder = segment.content;
-              const val = values[index] || '';
-              
-              // Grid trick for auto-sizing input to fit content
-              return (
-                <span key={index} className="inline-grid align-baseline mx-1.5 relative group/input">
-                  {/* Invisible span to force width */}
-                  <span className="col-start-1 row-start-1 invisible whitespace-pre px-3 py-1 border-b-[3px] border-transparent font-medium min-w-[3em]" aria-hidden="true">
-                    {val || placeholder}
+        {/* Content Container */}
+        <div className="relative z-10">
+          <div className="text-base md:text-lg leading-[1.6] text-gray-900 font-bold font-mono whitespace-pre-wrap break-words decoration-skip-ink space-y-3">
+            {segments.map((segment, index) => {
+              if (segment.type === 'blank') {
+                const placeholder = segment.content;
+                const val = values[index] || '';
+                
+                return (
+                  <span key={index} className="inline-grid align-baseline mx-0.5 relative group/input translate-y-[2px]">
+                    <span className="col-start-1 row-start-1 invisible whitespace-pre px-2.5 py-0 border-b-2 border-transparent font-bold min-w-[3em]" aria-hidden="true">
+                      {val || placeholder}
+                    </span>
+                    
+                    <input
+                      type="text"
+                      className="col-start-1 row-start-1 w-full bg-[#FFEE93] border-b-2 border-black/10 focus:border-[#FF4B4B] focus:outline-none focus:bg-[#FFF7D1] px-2.5 py-0 text-center font-bold text-black placeholder-black/30 transition-all rounded shadow-[1px_1px_0px_0px_rgba(0,0,0,0.1)] focus:shadow-[2px_2px_0px_0px_rgba(255,75,75,0.2)]"
+                      placeholder={placeholder}
+                      value={val}
+                      onChange={(e) => handleInputChange(index, e.target.value)}
+                      onClick={(e) => e.stopPropagation()}
+                    />
                   </span>
-                  
-                  {/* Actual input */}
-                  <input
-                    type="text"
-                    className="col-start-1 row-start-1 w-full bg-[#FFF9DB] border-b-[3px] border-black/20 focus:border-black focus:outline-none focus:bg-[#FFF3BF] px-3 py-1 text-center font-medium text-gray-900 placeholder-gray-400/70 transition-colors rounded-t-sm"
-                    placeholder={placeholder}
-                    value={val}
-                    onChange={(e) => handleInputChange(index, e.target.value)}
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                  
-                  {/* Hover visual cue */}
-                  <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-black scale-x-0 group-focus-within/input:scale-x-100 transition-transform duration-300 origin-left"></span>
+                );
+              }
+              return (
+                <span key={index} className="text-[#2D3436] tracking-tight hover:text-black transition-colors">
+                  {segment.content}
                 </span>
               );
-            }
-            return <span key={index} className="text-gray-800">{segment.content}</span>;
-          })}
+            })}
+          </div>
         </div>
 
-        {/* Footer actions */}
-        <div className="mt-8 flex justify-end">
-          <button
-             onClick={handleCopy}
-             className={`flex items-center gap-2 px-4 py-2 text-sm font-bold border-2 border-black rounded-lg transition-all 
-               ${copied 
-                 ? 'bg-emerald-500 text-white shadow-[2px_2px_0px_0px_#000]' 
-                 : 'bg-white text-black hover:bg-black hover:text-white shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]'
-               }`}
-          >
-            {copied ? (
-              <>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span className="font-black">COPIED!</span>
-              </>
-            ) : (
-              <>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                COPY TEXT
-              </>
-            )}
-          </button>
+        {/* Footer actions - More compact */}
+        <div className="mt-6 pt-4 border-t-2 border-black/5 flex flex-wrap gap-3 items-center justify-between">
+          <div className="text-[10px] font-black text-black/30 uppercase tracking-widest hidden sm:block">
+            Prompt Template
+          </div>
+          
+          <div className="flex gap-3 w-full sm:w-auto">
+            {/* Copy Original Button */}
+            <button
+              onClick={handleCopyTemplate}
+              className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 text-xs font-black border-[2px] border-black rounded-lg transition-all 
+                duration-200 active:scale-90 select-none
+                ${templateCopied 
+                  ? 'bg-yellow-400 text-black shadow-none border-dashed animate-none' 
+                  : 'bg-white text-black hover:bg-yellow-50 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                }`}
+            >
+              <div className={`flex items-center gap-2 transition-transform duration-300 ${templateCopied ? 'scale-110' : 'scale-100'}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                <span>{templateCopied ? '已锁定原文' : '复制原文'}</span>
+              </div>
+            </button>
+
+            {/* Main Copy Button */}
+            <button
+               onClick={handleCopy}
+               className={`flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2 text-xs font-black border-[2px] border-black rounded-lg transition-all 
+                 duration-200 active:scale-90 select-none overflow-hidden relative group/btn
+                 ${copied 
+                   ? 'bg-[#10B981] text-white shadow-none border-dashed' 
+                   : 'bg-[#FF4B4B] text-white hover:bg-[#FF6B6B] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                 }`}
+            >
+              {/* Shimmer effect on hover */}
+              {!copied && (
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover/btn:animate-[shimmer_1.5s_infinite] transition-none pointer-events-none" />
+              )}
+              
+              <div className={`flex items-center gap-2 transition-all duration-300 ${copied ? 'scale-110' : 'scale-100'}`}>
+                {copied ? (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span className="tracking-wider">成功复制！</span>
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>复制填词结果</span>
+                  </>
+                )}
+              </div>
+            </button>
+          </div>
         </div>
       </div>
+      
+      {/* Add shimmer animation if not defined in global CSS */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes shimmer {
+          100% { transform: translateX(100%); }
+        }
+      `}} />
     </div>
   );
 }
