@@ -1,12 +1,12 @@
 ---
-title: How to use Skills in Antigravity
+title: 如何在Antigravity中使用Skills（英文原版）
 date: 2026/01/14
 description: Skills are an open standard for extending agent ca...
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png
 isPublic: 1
 ---
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png)
-# Agent Skills
+# 如何在Antigravity中使用Skills（英文原版）
 
 Skills are an open standard for extending agent capabilities. A skill is a folder containing a `SKILL.md` file with instructions that the agent can follow when working on specific tasks.
 
@@ -14,15 +14,13 @@ Skills are an open standard for extending agent capabilities. A skill is a folde
 
 Skills are reusable packages of knowledge that extend what the agent can do. Each skill contains:
 
-* **Instructions** for how to approach a specific type of task
-* **Best practices** and conventions to follow
-* **Optional scripts and resources** the agent can use
+*   **Instructions** for how to approach a specific type of task
+*   **Best practices** and conventions to follow
+*   **Optional scripts and resources** the agent can use
 
 When you start a conversation, the agent sees a list of available skills with their names and descriptions. If a skill looks relevant to your task, the agent reads the full instructions and follows them.
 
-## Where skills live
-
-Antigravity supports two types of skills:
+## 如何在Antigravity中使用Skills（英文原版） supports two types of skills:
 
 | Location                                           | Scope                   |
 | :------------------------------------------------- | :---------------------- |

@@ -1,11 +1,11 @@
 ---
-title: How to prompt Gemini 2.5 Flash Image Generation for the best results（中文版）
+title: Gemini 2.5 Flash 图像生成指南
 date: 2025/08/28
 description: 日期：2025年8月28日。了解如何通过提示词让 Gemini 2.5 Flash 生成最佳效果的图像。
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/b6f6e702540086167e82c74c0b06da1c.jpg
 isPublic: 1
 ---
-# How to prompt Gemini 2.5 Flash Image Generation for the best results（中文版）
+# Gemini 2.5 Flash 图像生成指南
 
 **日期：** 2025年8月28日  
 **作者：**

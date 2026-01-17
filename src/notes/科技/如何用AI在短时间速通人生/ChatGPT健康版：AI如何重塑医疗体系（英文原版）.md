@@ -1,11 +1,11 @@
 ---
-title: ChatGPT Health and what AI can do for a broken system
+title: ChatGPT健康版：AI如何重塑医疗体系（英文原版）
 date: 2026/01/17
 description: Healthcare isn’t working for patients or doctors, ...
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/3f4273f54926c3de7abb07fe8333d1aa.png
 isPublic: 1
 ---
-# ChatGPT Health and what AI can do for a broken system
+# ChatGPT健康版：AI如何重塑医疗体系（英文原版）
 
 Healthcare isn’t working for patients or doctors, but AI tools can help.
 **Author:** [Fidji Simo](https://substack.com/@fidjisimo)
