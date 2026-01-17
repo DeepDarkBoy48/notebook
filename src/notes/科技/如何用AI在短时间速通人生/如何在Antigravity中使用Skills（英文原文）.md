@@ -1,12 +1,12 @@
 ---
-title: 如何在Antigravity中使用Skills（英文原版）
+title: 如何在Antigravity中使用Skills（英文原文）
 date: 2026/01/14
 description: Skills are an open standard for extending agent ca...
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png
 isPublic: 1
 ---
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png)
-# 如何在Antigravity中使用Skills（英文原版）
+# 如何在Antigravity中使用Skills（英文原文）
 
 Skills are an open standard for extending agent capabilities. A skill is a folder containing a `SKILL.md` file with instructions that the agent can follow when working on specific tasks.
 
