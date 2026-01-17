@@ -49,7 +49,7 @@ export function CodeBlock({ inline, className, children, ...props }: CodeBlockPr
     margin: 0,
     padding: 0,
     background: 'transparent',
-    fontSize: '1.125rem', // text-lg (18px) - balanced size
+    fontSize: '0.9rem', // Smaller code font size for cleaner look
 
     lineHeight: '1.625',   // leading-relaxed
   };

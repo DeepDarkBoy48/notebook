@@ -242,7 +242,7 @@ export function NotePage() {
 
     const checkOverlap = () => {
       const sidebarWidth = 320; // w-80 = 20rem = 320px
-      const contentMaxWidth = 896; // max-w-4xl = 56rem = 896px
+      const contentMaxWidth = 768; // max-w-3xl = 48rem = 768px
       const viewportWidth = window.innerWidth;
       
       // Content is centered, so its right edge is at: (viewport / 2) + (content / 2)
@@ -278,7 +278,7 @@ export function NotePage() {
   return (
     <div className={`relative min-h-screen transition-all duration-300 ${needsPadding ? 'pr-80' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <article className="max-w-4xl mx-auto w-full space-y-12">
+        <article className="max-w-3xl mx-auto w-full space-y-12">
           <header className="text-center space-y-6 border-b-4 border-black pb-12">
             <div className="space-x-4 flex justify-center items-center">
               <span className="text-sm font-black text-black bg-yellow-400 px-3 py-1 border-2 border-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -290,16 +290,16 @@ export function NotePage() {
               </span>
             </div>
             <h1 
-              className="text-3xl md:text-6xl font-black text-black tracking-tight uppercase leading-tight"
+              className="text-3xl md:text-4xl font-black text-black tracking-tight uppercase leading-tight"
               dangerouslySetInnerHTML={{ __html: note.title.replace(/\n/g, '<br />') }}
             />
           </header>
 
-          <div className="prose prose-lg md:prose-xl prose-gray max-w-none 
+          <div className="prose prose-base md:prose-lg prose-gray max-w-none 
             prose-headings:font-black prose-headings:text-black prose-headings:uppercase prose-headings:tracking-tight
-            prose-h1:text-3xl md:prose-h1:text-5xl 
-            prose-h2:text-2xl md:prose-h2:text-4xl prose-h2:decoration-pink-500 prose-h2:underline prose-h2:decoration-4 prose-h2:underline-offset-4
-            prose-p:text-lg md:prose-p:text-xl prose-p:leading-relaxed
+            prose-h1:text-2xl md:prose-h1:text-3xl 
+            prose-h2:text-xl md:prose-h2:text-2xl prose-h2:decoration-pink-500 prose-h2:underline prose-h2:decoration-4 prose-h2:underline-offset-4
+            prose-p:text-base md:prose-p:text-lg prose-p:leading-relaxed
             prose-a:text-black prose-a:bg-yellow-200 prose-a:px-1 prose-a:font-bold prose-a:no-underline hover:prose-a:bg-yellow-400 prose-a:border-b-2 prose-a:border-black
             prose-strong:font-black prose-strong:text-black
             prose-img:rounded-none prose-img:border-4 prose-img:border-black prose-img:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
