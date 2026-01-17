@@ -5,7 +5,6 @@ description: 医疗体系对患者和医生来说都已不堪重负，但 AI 工
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/3f4273f54926c3de7abb07fe8333d1aa.png
 isPublic: 1
 ---
-
 # ChatGPT健康版：AI如何重塑医疗体系
 
 医疗体系对患者和医生来说都已不堪重负，但 AI 工具能够提供帮助。
@@ -13,6 +12,8 @@ isPublic: 1
 **作者：** [Fidji Simo](https://substack.com/@fidjisimo)
 **日期：** 2026年1月7日
 **来源：** [Fidji Simo的Substack](https://fidjisimo.substack.com/p/chatgpt-health)
+
+![1768670069226](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/69ed7e9af7b5d05fe72ff2eb507dcaee.png)
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: How to prompt Gemini 2.5 Flash Image Generation for the best results
 date: 2025/08/28
-description: "Date: AUG. 28, 2025"
+description: Date: AUG. 28, 2025
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/b6f6e702540086167e82c74c0b06da1c.jpg
 isPublic: 1
 ---

@@ -1,7 +1,7 @@
 ---
-title: "Nanobanana Pro 使用案例"
+title: Nanobanana Pro 使用案例
 date: 2025/12/11
-description: "带你体验最有意思的🍌玩法"
+description: 带你体验最有意思的🍌玩法
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/1d66e7a48640c07205eda2b06226f17f.png
 isPublic: 1
 ---

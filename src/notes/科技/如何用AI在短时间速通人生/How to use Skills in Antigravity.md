@@ -2,10 +2,10 @@
 title: How to use Skills in Antigravity
 date: 2026/01/14
 description: Skills are an open standard for extending agent ca...
-image:
+image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png
 isPublic: 1
 ---
-![[Gemini_Generated_Image_u6z7alu6z7alu6z7.png]]
+![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png)
 # Agent Skills
 
 Skills are an open standard for extending agent capabilities. A skill is a folder containing a `SKILL.md` file with instructions that the agent can follow when working on specific tasks.

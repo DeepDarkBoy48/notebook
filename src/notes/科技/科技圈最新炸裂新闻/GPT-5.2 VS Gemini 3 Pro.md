@@ -1,7 +1,7 @@
 ---
-title: "GPT-5.2 <br> VS <br> Gemini 3 Pro"
+title: GPT-5.2 <br> VS <br> Gemini 3 Pro
 date: 2025/12/12
-description: "2025年末AI前沿模型深度评估报告：GPT-5.2与Gemini 3 Pro的用户体验、生态壁垒与实战效能对比"
+description: 2025年末AI前沿模型深度评估报告：GPT-5.2与Gemini 3 Pro的用户体验、生态壁垒与实战效能对比
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ea5a2c16ed5b064d72f85deb5811998d.%28null%29
 isPublic: 1
 ---
