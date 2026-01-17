@@ -11,9 +11,8 @@ isPublic: 1
 
 **作者：** [Fidji Simo](https://substack.com/@fidjisimo)
 **日期：** 2026年1月7日
-**来源：** [Fidji Simo的Substack](https://fidjisimo.substack.com/p/chatgpt-health)
-
-![1768670069226](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/69ed7e9af7b5d05fe72ff2eb507dcaee.png)
+**来源：** [Fidji Simo的Substack
+](https://fidjisimo.substack.com/p/chatgpt-health)
 
 ---
 
