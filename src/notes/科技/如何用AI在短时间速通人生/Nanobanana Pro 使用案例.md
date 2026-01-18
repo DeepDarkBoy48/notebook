@@ -75,7 +75,9 @@ Gemini 默认生成的是 1k 图片，乍一看写的还挺好，特别大标题
 
 
 
-# 5. 文章信息图 - 第一阶段：内容分析
+# 5. 文章信息图
+
+## 第一阶段：内容分析
 
 此阶段使用 Google Search 能力对网页内容进行结构化提取。
 
@@ -119,7 +121,7 @@ Keep the output concise and focused purely on what should be ON the infographic.
 
 <br>
 
-# 6. 文章信息图 - 第二阶段：视觉渲染
+## 第二阶段：视觉渲染
 
 将第一阶段的分析结果转化为最终图像。
 
@@ -160,7 +162,7 @@ VISUAL DESIGN RULES:
 
 
 
-# 7. NotebookLM Slide Deck System Prompt
+# 6. NotebookLM Slide Deck System Prompt
 
 **英文原文 (Template):**
 
@@ -202,7 +204,7 @@ We have also attached some producer notes below for this slide deck which will h
 
 
 
-# 8. NotebookLM 信息图 Prompt
+# 7. NotebookLM 信息图 Prompt
 
 **英文原文 (Template):**
 
@@ -270,7 +272,7 @@ Rule 4: Handling of source data. All data from the source document MUST be copie
 规则 4：源数据处理。源文档中的所有数据必须逐字复制。不要进行总结或改写。
 ```
 
-# 9. 画廊风
+# 8. 画廊风
 
 ## 深邃画廊
 
