@@ -14,13 +14,15 @@ Skills are an open standard for extending agent capabilities. A skill is a folde
 
 Skills are reusable packages of knowledge that extend what the agent can do. Each skill contains:
 
-*   **Instructions** for how to approach a specific type of task
-*   **Best practices** and conventions to follow
-*   **Optional scripts and resources** the agent can use
+* **Instructions** for how to approach a specific type of task
+* **Best practices** and conventions to follow
+* **Optional scripts and resources** the agent can use
 
 When you start a conversation, the agent sees a list of available skills with their names and descriptions. If a skill looks relevant to your task, the agent reads the full instructions and follows them.
 
-## 如何在Antigravity中使用Skills（英文原版） supports two types of skills:
+## Where skills live
+
+Antigravity supports two types of skills:
 
 | Location                                           | Scope                   |
 | :------------------------------------------------- | :---------------------- |
