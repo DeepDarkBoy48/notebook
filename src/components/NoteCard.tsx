@@ -9,6 +9,7 @@ interface NoteCardProps {
     subcategory?: string;
     slug: string;
     image?: string;
+    sticky?: string;
   };
 }
 
@@ -41,7 +42,22 @@ export function NoteCard({ note }: NoteCardProps) {
 
 
 
-        {/* New Tag - Slanted & Highlighted */}
+         
+         {/* Pinned Tag */}
+         {note.sticky === '1' && (
+            <div className="absolute top-2 left-2 z-30 rotate-[-4deg] group-hover:rotate-[-8deg] transition-transform duration-200">
+              <div className="bg-[#FF6B6B] border-2 border-black px-4 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <span className="text-sm font-black text-white uppercase tracking-widest flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16,12V4H17V2H7V4H8V12L6,14V16H11V22L12,23L13,22V16H18V14L16,12Z" />
+                  </svg>
+                  PINNED
+                </span>
+              </div>
+            </div>
+         )}
+
+         {/* New Tag - Slanted & Highlighted */}
         {note.date === new Date().toISOString().split('T')[0] && (
            <div className="absolute -top-2 -left-2 z-30 rotate-[-6deg] group-hover:rotate-[-12deg] transition-transform duration-200">
              <div className="bg-[#00FF94] border-2 border-black px-4 py-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">

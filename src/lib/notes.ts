@@ -11,6 +11,7 @@ export interface Note {
   image?: string;
   content: string;
   isPublic?: string;
+  sticky?: string;
 }
 
 function parseFrontmatter(text: string) {
@@ -92,11 +93,21 @@ export const getAllNotes = (): Note[] => {
       description: data.description || extractedDescription,
       image: data.image || extractedImage,
       content,
-      isPublic: data.isPublic
+      isPublic: data.isPublic,
+      sticky: data.sticky
     };
   })
   .filter(note => note.isPublic !== '0')
   .sort((a, b) => {
+    // Sort by sticky first (1 is pinned)
+    const aSticky = a.sticky === '1' ? 1 : 0;
+    const bSticky = b.sticky === '1' ? 1 : 0;
+    
+    if (aSticky !== bSticky) {
+      return bSticky - aSticky;
+    }
+    
+    // Then sort by date
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 };
