@@ -131,19 +131,19 @@ export function TableOfContents({ headings, isOpen = false, onClose, isPinned = 
                 href={`#${heading.id}`}
                 className={`block transition-all duration-200 border-l-4 pl-4 py-1.5 hover:translate-x-1 group ${
                   activeId === heading.id
-                    ? 'border-black bg-yellow-400 text-black font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5'
+                    ? 'border-black bg-black text-white font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] -translate-y-0.5'
                     : 'border-black/10 text-black/70 font-bold hover:text-black hover:border-black hover:bg-gray-50'
                 }`}
                 onClick={(e) => handleClick(e, heading.id)}
               >
                 <span className={`inline-flex items-center gap-2 ${activeId === heading.id ? 'scale-105' : ''} transition-transform`}>
-                  {heading.level === 1 && <span className="w-2.5 h-2.5 bg-black shrink-0 rotate-45"></span>}
+                  {heading.level === 1 && <span className="w-2.5 h-2.5 bg-current shrink-0 rotate-45"></span>}
                   {heading.text}
                 </span>
               </a>
-              {/* Pop Art Dot Pattern Background for Active Item */}
+              {/* Subtle pattern for white background, hidden when active item is black */}
               {activeId === heading.id && (
-                <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:4px_4px]"></div>
+                <div className="absolute inset-0 -z-10 opacity-5 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:4px_4px]"></div>
               )}
             </li>
           ))}
