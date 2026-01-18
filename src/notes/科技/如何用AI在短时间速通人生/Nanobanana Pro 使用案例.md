@@ -40,25 +40,27 @@ isPublic: 1
 
 # 4. 修复不清晰的中文
 
-Gemini默认生成的是1k图片，乍一看写的还挺好，特别大标题基本没有错误。但是放大看细节，很多的小字都模糊不清。
+Gemini 默认生成的是 1k 图片，乍一看写的还挺好，特别大标题基本没有错误。但是放大看细节，很多的小字都模糊不清。
 
 <img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/190517da4bbadf0ccc3ed8fb95091295.%28null%29" alt="img" style="zoom: 33%;" />
 
-> **方法一**
+### 方法一：下载 2k 原图
 
-点击下载按钮，Gemini会下载完整2k图，中文效果会好很多。
+点击下载按钮，Gemini 会下载完整 2k 图，中文效果会好很多。
 
 ![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ca1fd9e1e7ee0940ffc39039bbda0b69.%28null%29)
 
-> **方法二**
+<br>
 
-如果下载的2k图还是不清晰，这时候我们可以采用直接vibe对话的方式让他修复不清晰的中文。
+### 方法二：使用 Vibe 对话修复
 
-注意：仍然要点击下载按钮下载2k图
+如果下载的 2k 图还是不清晰，这时候我们可以采用直接 vibe 对话的方式让他修复不清晰的中文。
+
+**注意：** 仍然要点击下载按钮下载 2k 图。
 
 <img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/5ce1375fe74bd8ec42d67b66d11023b8.%28null%29" alt="img"  />
 
-修复效果对比
+**修复效果对比：**
 
 <img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/271f6b4297bdafe9545b281194873390.%28null%29" alt="img" style="zoom:33%;" />
 
@@ -67,6 +69,7 @@ Gemini默认生成的是1k图片，乍一看写的还挺好，特别大标题基
 ```fillcard
 修复不清晰的中文
 ```
+
 
 
 
@@ -322,3 +325,47 @@ Rule 4: Handling of source data. All data from the source document MUST be copie
 
 规则 4：源数据处理。源文档中的所有数据必须逐字复制。不要进行总结或改写。
 ```
+
+# 10. 画廊风
+
+## 深邃画廊
+
+**设计思路：** 使用极致的深色（深蓝黑或纯黑）背景，像舞台聚光灯一样打在鱼身上。这种强烈的明暗对比（Chiaroscuro）能让原本“花哨”的色彩瞬间变得像宝石一样珍贵和高级，非常有现代客厅艺术品的感觉。
+
+**英文原文 (Prompt):**
+
+```fillcard
+[Oil painting] for a [living room]. The exact same group of [colorful fish] from the original image, maintaining their vibrant red, orange, silver, and blue colors and quantity. They are swimming against a completely completely solid, [deep velvet black] background. No rocks, gravel, or plants. Dramatic studio lighting highlights the vivid colors and scales of the fish, making them pop out of the darkness. Clean, minimalist, sophisticated, high contrast [gallery art style].
+```
+
+**中文翻译:**
+
+```fillcard
+[客厅油画]。原图中的同一组[多彩鱼群]，保持其鲜艳的红色、橙色、银色和蓝色色彩以及数量。它们在完全纯净的[深天鹅绒黑色]背景下游动。没有岩石、碎石或植物。戏剧性的摄影棚灯光突出了鱼的鲜艳色彩和鳞片，使它们从黑暗中跳脱出来。干净、极简、精致、高对比度的[画廊艺术风格]。
+```
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/82643f2f0c697ea6ca54bc2a554e5d8c.jpg)
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/9b8863975fb4abf10856774fd8df5d46.jpeg)
+
+<br>
+
+## 柔和渐变水体画廊
+
+**设计思路：** 如果你不喜欢太黑的背景，可以用一个非常干净、柔和的水体渐变色来代替。关键是“顺滑”，没有任何颗粒感和杂物，营造一种宁静深远的氛围，包容住前景热闹的鱼群。
+
+**英文原文 (Prompt):**
+
+```fillcard
+[A large canvas oil painting]. The numerous [colorful fish] (red, orange, silver, blue) from the input remain vibrant and are the sole focus. The noisy background is replaced by a smooth, clean, soft gradient of [deep ocean blues], transitioning from dark indigo at the bottom to a lighter cerulean at the top. No distinct objects, rocks, or texture in the background. Soft, diffused underwater light. Calm, serene, spacious feeling.
+```
+
+**中文翻译:**
+
+```fillcard
+[大幅布面油画]。输入中众多的[多彩鱼]（红、橙、银、蓝）保持鲜艳，并且是唯一的焦点。嘈杂的背景被光滑、干净、柔和的[深海蓝色]渐变所取代，从底部的深靛蓝过渡到顶部的浅蔚蓝。背景中没有明显的物体、岩石或纹理。柔和的漫射水下光线。平静、宁静、宽敞的感觉。
+```
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/066ca83635a756c98802b2e03a2c1c17.jpg)
+
+![img](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/52795930b6d3cfd20a55fb495dee9060.jpeg)
