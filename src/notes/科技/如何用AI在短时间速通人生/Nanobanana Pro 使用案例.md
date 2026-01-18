@@ -74,65 +74,8 @@ Gemini 默认生成的是 1k 图片，乍一看写的还挺好，特别大标题
 
 
 
-# 5. 代码库蓝图生成 (generateInfographic)
 
-这是将 GitHub 仓库转化为架构图的核心提示词。
-
-**英文原文 (Template):**
-
-```fillcard
-Create a highly detailed technical logical data flow diagram infographic for GitHub repository : "[Repo Name]".
-
-STRICT VISUAL STYLE GUIDELINES:
-[Style Guidelines]
-- LAYOUT: Distinct Left-to-Right flow.
-- CENTRAL CONTAINER: Group core logic inside a clearly defined central area.
-- ICONS: Use relevant technical icons (databases, servers, code files, users).
-- TYPOGRAPHY: Highly readable technical font. Text MUST be in [Language].
-
-[Dimension Prompt]
-
-Repository Context: [File Tree]...
-
-Diagram Content Requirements:
-1. Title exactly: "[Repo Name] Data Flow" (Translated to [Language] if not English)
-2. Visually map the likely data flow based on the provided file structure.
-3. Ensure the "Input -> Processing -> Output" structure is clear.
-4. Add short, clear text labels to connecting arrows indicating data type (e.g., "JSON", "Auth Token").
-5. IMPORTANT: All text labels and explanations in the image must be written in [Language].
-```
-
-
-
-**中文翻译:**
-
-```fillcard
-为 GitHub 仓库 "[仓库名称]" 创建一个高度详细的技术逻辑数据流信息图。
-
-严格的视觉风格指南：
-[风格指南]
-- 布局：明显的从左到右流向。
-- 中心容器：将核心逻辑分组在一个清晰定义的中心区域内。
-- 图标：使用相关的技术图标（数据库、服务器、代码文件、用户）。
-- 字体：高度可读的技术字体。文字必须使用 [语言]。
-
-[维度提示] (维度提示，如 2D 平面或 3D 等轴测)
-
-仓库上下文：[文件树]...
-
-图表内容要求：
-1. 标题务必为： "[仓库名称] Data Flow"（如果不是英文，请翻译成 [语言]）
-2. 根据提供的文件结构，视觉化映射可能的数据流。
-3. 确保“输入 -> 处理 -> 输出”的结构清晰。
-4. 在连接箭头上添加简短清晰的文本标签，说明数据类型（例如：“JSON”、“Auth Token”）。
-5. 重要：图像中的所有文本标签和解释必须使用 [语言] 编写。
-```
-
-
-
-<br>
-
-# 6. 文章信息图 - 第一阶段：内容分析
+# 5. 文章信息图 - 第一阶段：内容分析
 
 此阶段使用 Google Search 能力对网页内容进行结构化提取。
 
@@ -145,13 +88,13 @@ Analyze the content at this URL: [URL]
 
 TARGET LANGUAGE: [Language].
 
-Provide a structured breakdown specifically designed for visual representation in [Language]:
-1. INFOGRAPHIC HEADLINE: The core topic in 5 words or less (in [Language]).
-2. KEY TAKEAWAYS: The 3 to 5 most important distinct points, steps, or facts (in [Language]). THESE WILL BE THE MAIN SECTIONS OF THE IMAGE.
+Provide a structured breakdown specifically designed for visual representation in the TARGET LANGUAGE:
+1. INFOGRAPHIC HEADLINE: The core topic in 5 words or less (in this language).
+2. KEY TAKEAWAYS: The 3 to 5 most important distinct points, steps, or facts (in this language). THESE WILL BE THE MAIN SECTIONS OF THE IMAGE.
 3. SUPPORTING DATA: Any specific numbers, percentages, or very short quotes that add credibility.
 4. VISUAL METAPHOR IDEA: Suggest ONE simple visual concept that best fits this content (e.g., "a roadmap with milestones", "a funnel", "three contrasting pillars", "a circular flowchart").
 
-Keep the output concise and focused purely on what should be ON the infographic. Ensure all content is in [Language].
+Keep the output concise and focused purely on what should be ON the infographic. Ensure all content is in the specified language.
 ```
 
 
@@ -165,18 +108,18 @@ Keep the output concise and focused purely on what should be ON the infographic.
 
 目标语言：[语言]。
 
-提供一个专门为视觉呈现设计的结构化分解（使用 [语言]）：
-1. 信息图标题：5 个词以内的核心主题（使用 [语言]）。
-2. 核心要点：3 到 5 个最重要的不同观点、步骤或事实（使用 [语言]）。这些将作为图像的主要板块。
+提供一个专门为视觉呈现设计的结构化分解（使用该目标语言）：
+1. 信息图标题：5 个词以内的核心主题（使用该目标语言）。
+2. 核心要点：3 到 5 个最重要的不同观点、步骤或事实（使用该目标语言）。这些将作为图像的主要板块。
 3. 支持数据：任何增加可信度的具体数字、百分比或极短的引用。
 4. 视觉隐喻创意：建议一个最适合此内容的简单视觉概念（例如：“带里程碑的路线图”、“漏斗”、“三个对比鲜明的支柱”、“圆形流程图”）。
 
-保持输出简洁，纯粹专注于应该出现在信息图上的内容。确保所有内容均使用 [语言]。
+保持输出简洁，纯粹专注于应该出现在信息图上的内容。确保所有内容均使用上述指定的语言。
 ```
 
 <br>
 
-# 7. 文章信息图 - 第二阶段：视觉渲染
+# 6. 文章信息图 - 第二阶段：视觉渲染
 
 将第一阶段的分析结果转化为最终图像。
 
@@ -217,7 +160,7 @@ VISUAL DESIGN RULES:
 
 
 
-# 8. NotebookLM Slide Deck System Prompt
+# 7. NotebookLM Slide Deck System Prompt
 
 **英文原文 (Template):**
 
@@ -230,7 +173,7 @@ Your core mission is to create a detailed outline for a slide deck. This outline
 
 The slide deck will be primarily designed for reading and sharing. The structure should be self-explanatory and easy to follow without a presenter. The narrative and all the useful data should be contained within the text and visuals on the slides. The slides should contain enough context for any visuals to be understood on their own. Feel free to add certain slides with more dense information (extracted from the sources) if it will help with the narrative.
 
-You are now writing an outline for this slide deck described below. We will supply this outline to an expert designer to make the actual final deck. The slide content should be in [Language]. The placeholders should be left in [Language].
+You are now writing an outline for this slide deck described below. We will supply this outline to an expert designer to make the actual final deck. The slide content should be in [Language]. The placeholders should be left in this specified language.
 
 For this particular slide deck, we want the content to focus on: [High-level Outline/Style/Focus]
 
@@ -250,7 +193,7 @@ We have also attached some producer notes below for this slide deck which will h
 
 这份幻灯片将主要用于阅读和分享。其结构应当是自解释的，即便没有演讲者也能轻松理解。叙述逻辑和所有有用数据都应包含在幻灯片的文本和视觉元素中。幻灯片应提供足够的上下文，以便其中的视觉内容能被独立理解。如果对叙述有帮助，可以添加包含密集信息（从源资料中提取）的特定页面。
 
-你现在正在为下面描述的这份幻灯片编写大纲。我们将把这份大纲交给专业设计师制作最终成片。幻灯片内容应使用 [语言]。占位符应保留为 [语言]。
+你现在正在为下面描述的这份幻灯片编写大纲。我们将把这份大纲交给专业设计师制作最终成片。幻灯片内容应使用 [语言]。占位符应保留为该语言。
 
 对于这份特定的幻灯片，我们希望内容侧重于：[高层大纲/风格/重点]
 
@@ -259,7 +202,7 @@ We have also attached some producer notes below for this slide deck which will h
 
 
 
-# 9. NotebookLM 信息图 Prompt
+# 8. NotebookLM 信息图 Prompt
 
 **英文原文 (Template):**
 
@@ -272,7 +215,7 @@ Your task is to analyze the provided Source Context and User Steering Prompt and
 
 This will be passed to an expert infographic designer in the next step who will rely on it to create a high quality infographic. They will not have access to the Source Context, so ensure it is well represented. The infographic must be in the same language as [Input Language] or English.
 
-You will also analyze the provided User Steering Prompt and extract only the design-related instructions (style, layout, color, etc.) into a dedicated Design Instructions section at the end.
+You will also analyze the provided User Steering Prompt and extract only the [Instruction Type: design-related instructions (style, layout, color, etc.)] into a dedicated Design Instructions section at the end.
 
 THE PROCESS
 
@@ -306,7 +249,7 @@ Rule 4: Handling of source data. All data from the source document MUST be copie
 
 这些内容将在下一步传递给专业的信息图设计师，他们将依据此内容创作高质量的信息图。他们无法接触到原始源上下文，因此请确保内容具有充分的代表性。信息图必须使用与输入相同的语言或 [目标语言]。
 
-你还将分析提供的用户指导提示词，并将仅与设计相关的指令（风格、布局、颜色等）提取到末尾的专用“设计说明”部分。
+你还将分析提供的用户指导提示词，并将仅与[指令类型：设计相关的指令（风格、布局、颜色等）]提取到末尾的专用“设计说明”部分。
 
 处理流程
 
@@ -327,7 +270,7 @@ Rule 4: Handling of source data. All data from the source document MUST be copie
 规则 4：源数据处理。源文档中的所有数据必须逐字复制。不要进行总结或改写。
 ```
 
-# 10. 画廊风
+# 9. 画廊风
 
 ## 深邃画廊
 
