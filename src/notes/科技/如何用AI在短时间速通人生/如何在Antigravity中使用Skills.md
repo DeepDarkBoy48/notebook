@@ -7,6 +7,7 @@ isPublic: 1
 ---
 ![](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/88daef659c41f7e796ab32f2c326a7ae.png)
 
+
 # 如何在Antigravity中使用Skills
 
 技能是扩展 Agent 能力的开放标准。一个“技能”就是一个文件夹，其中包含一个 `SKILL.md` 文件，里面记录了 Agent 在执行特定任务时可以遵循的指令。
@@ -33,6 +34,9 @@ Antigravity 支持两种类型的技能：
 **工作区技能** 非常适合特定项目的流程，例如团队的部署逻辑或测试规范。
 
 **全局技能** 可以在你所有的项目中使用。适用于个人工具函数或你希望随处可用的通用工具。
+
+![Antigravity 技能指南：什么是技能与存放位置](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/7fdbbb168a6dcb737d6c8bd510f4ea61.jpeg)
+
 
 ## 创建技能
 
@@ -92,6 +96,9 @@ Agent 应该遵循的步骤指南、约定和模式。
 
 Agent 在遵循技能指令时可以读取这些文件。
 
+![构建你的技能：创建步骤与文件结构解析](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ea110cd57b61e5a72d1105e6135cca17.jpeg)
+
+
 ## Agent 如何使用技能
 
 技能遵循 **渐进式披露 (Progressive Disclosure)** 模式：
@@ -119,6 +126,9 @@ Agent 在遵循技能指令时可以读取这些文件。
 ### 包含决策树
 
 对于复杂的技能，可以添加一个章节来帮助 Agent 根据不同情况选择正确的方法。
+
+![交互流程与专家建议：Agent 如何使用技能及最佳实践](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/4327a3772844015ac8cd563852e106ee.jpeg)
+
 
 ## 示例：代码审查技能
 

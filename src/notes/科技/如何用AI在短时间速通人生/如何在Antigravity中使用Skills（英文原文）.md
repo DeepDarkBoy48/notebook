@@ -31,7 +31,10 @@ Antigravity supports two types of skills:
 
 **Workspace skills** are great for project-specific workflows, like your team's deployment process or testing conventions.
 
-**Global skills** work across all your projects. Use these for personal utilities or general-purpose tools you want everywhere.
+**Global skills** work across all your projects. Use these for personal utilities or General-purpose tools you want everywhere.
+
+![Antigravity Skills Guide: What are skills and Where they live](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/7fdbbb168a6dcb737d6c8bd510f4ea61.jpeg)
+
 
 ## Creating a skill
 
@@ -91,6 +94,9 @@ While `SKILL.md` is the only required file, you can include additional resources
 
 The agent can read these files when following your skill's instructions.
 
+![Building Your Skill: Creation steps and File structure analysis](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ea110cd57b61e5a72d1105e6135cca17.jpeg)
+
+
 ## How the agent uses skills
 
 Skills follow a **progressive disclosure** pattern:
@@ -118,6 +124,9 @@ If your skill includes scripts, encourage the agent to run them with `--help` fi
 ### Include decision trees
 
 For complex skills, add a section that helps the agent choose the right approach based on the situation.
+
+![Interaction Flow and Expert Advice: How the agent uses skills and Best practices](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/4327a3772844015ac8cd563852e106ee.jpeg)
+
 
 ## Example: A code review skill
 
