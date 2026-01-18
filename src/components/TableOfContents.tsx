@@ -120,36 +120,33 @@ export function TableOfContents({ headings, isOpen = false, onClose, isPinned = 
       
       <div className="flex-1 overflow-y-auto no-scrollbar pr-2">
         <ul className="space-y-3 text-sm font-bold">
-          {headings.map((heading) => {
-            const getHeadingColor = () => {
-               if (activeId === heading.id) return 'text-black';
-               switch (heading.level) {
-                 case 1: return 'text-black';
-                 case 2: return 'text-pink-600'; 
-                 case 3: return 'text-gray-500';
-                 default: return 'text-gray-500';
-               }
-            };
-
-            return (
+          {headings.map((heading) => (
             <li
               key={heading.id}
               id={`toc-${heading.id}`}
-              style={{ paddingLeft: `${(heading.level - 1) * 0.5}rem` }}
+              className="relative"
+              style={{ paddingLeft: `${(heading.level - 1) * 1}rem` }}
             >
               <a
                 href={`#${heading.id}`}
-                className={`block transition-all duration-200 border-l-4 pl-3 hover:translate-x-1 ${
+                className={`block transition-all duration-200 border-l-4 pl-4 py-1.5 hover:translate-x-1 group ${
                   activeId === heading.id
-                    ? 'border-pink-500'
-                    : 'border-transparent hover:text-black hover:border-black'
-                } ${getHeadingColor()}`}
+                    ? 'border-black bg-yellow-400 text-black font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5'
+                    : 'border-black/10 text-black/70 font-bold hover:text-black hover:border-black hover:bg-gray-50'
+                }`}
                 onClick={(e) => handleClick(e, heading.id)}
               >
-                {heading.text}
+                <span className={`inline-flex items-center gap-2 ${activeId === heading.id ? 'scale-105' : ''} transition-transform`}>
+                  {heading.level === 1 && <span className="w-2.5 h-2.5 bg-black shrink-0 rotate-45"></span>}
+                  {heading.text}
+                </span>
               </a>
+              {/* Pop Art Dot Pattern Background for Active Item */}
+              {activeId === heading.id && (
+                <div className="absolute inset-0 -z-10 opacity-10 pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:4px_4px]"></div>
+              )}
             </li>
-          )})}
+          ))}
         </ul>
       </div>
 

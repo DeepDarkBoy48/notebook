@@ -45,7 +45,7 @@ Gemini 默认生成的是 1k 图片，乍一看写的还挺好，特别大标题
 
 <img src="https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/190517da4bbadf0ccc3ed8fb95091295.%28null%29" alt="img" style="zoom: 33%;" />
 
-### 方法一：下载 2k 原图
+## 方法一：下载 2k 原图
 
 点击下载按钮，Gemini 会下载完整 2k 图，中文效果会好很多。
 
@@ -53,7 +53,7 @@ Gemini 默认生成的是 1k 图片，乍一看写的还挺好，特别大标题
 
 <br>
 
-### 方法二：使用 Vibe 对话修复
+## 方法二：使用 Vibe 对话修复
 
 如果下载的 2k 图还是不清晰，这时候我们可以采用直接 vibe 对话的方式让他修复不清晰的中文。
 
@@ -189,8 +189,9 @@ Rule 4: Handling of source data. All data from the source document MUST be copie
 规则 4：源数据处理。源文档中的所有数据必须逐字复制。不要进行总结或改写。
 ```
 
-# 7. 画廊风
 
+
+# 7. 画廊风
 ## 深邃画廊
 
 **设计思路：** 使用极致的深色（深蓝黑或纯黑）背景，像舞台聚光灯一样打在鱼身上。这种强烈的明暗对比（Chiaroscuro）能让原本“花哨”的色彩瞬间变得像宝石一样珍贵和高级，非常有现代客厅艺术品的感觉。
