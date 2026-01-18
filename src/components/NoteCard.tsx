@@ -51,7 +51,7 @@ export function NoteCard({ note }: NoteCardProps) {
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16,12V4H17V2H7V4H8V12L6,14V16H11V22L12,23L13,22V16H18V14L16,12Z" />
                   </svg>
-                  PINNED
+                  置顶
                 </span>
               </div>
             </div>
