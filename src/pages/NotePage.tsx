@@ -296,9 +296,10 @@ export function NotePage() {
           </header>
 
           <div className="prose prose-base md:prose-lg prose-gray max-w-none 
-            prose-headings:font-black prose-headings:text-black prose-headings:uppercase prose-headings:tracking-tight
-            prose-h1:text-2xl md:prose-h1:text-3xl 
-            prose-h2:text-xl md:prose-h2:text-2xl prose-h2:decoration-pink-500 prose-h2:underline prose-h2:decoration-4 prose-h2:underline-offset-4
+            prose-headings:font-black prose-headings:text-black prose-headings:uppercase prose-headings:tracking-tighter
+            prose-h1:text-white prose-h1:bg-black prose-h1:inline-block prose-h1:px-6 prose-h1:py-3 prose-h1:rotate-[-1deg] prose-h1:shadow-[8px_8px_0px_0px_rgba(255,144,232,1)] prose-h1:mb-12 prose-h1:text-3xl md:prose-h1:text-4xl
+            prose-h2:text-white prose-h2:bg-black prose-h2:inline-block prose-h2:px-4 prose-h2:py-2 prose-h2:rotate-[1deg] prose-h2:shadow-[4px_4px_0px_0px_rgba(0,255,148,1)] prose-h2:text-xl md:prose-h2:text-2xl prose-h2:mt-12 prose-h2:no-underline
+            prose-h3:text-black prose-h3:border-l-8 prose-h3:border-black prose-h3:pl-4 prose-h3:text-lg md:prose-h3:text-xl prose-h3:mt-8
             prose-p:text-base md:prose-p:text-lg prose-p:leading-relaxed
             prose-a:text-black prose-a:bg-yellow-200 prose-a:px-1 prose-a:font-bold prose-a:no-underline hover:prose-a:bg-yellow-400 prose-a:border-b-2 prose-a:border-black
             prose-strong:font-black prose-strong:text-black

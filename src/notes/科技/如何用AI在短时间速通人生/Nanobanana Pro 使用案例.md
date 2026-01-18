@@ -75,94 +75,11 @@ Gemini 默认生成的是 1k 图片，乍一看写的还挺好，特别大标题
 
 
 
-# 5. 文章信息图
-
-## 第一阶段：内容分析
-
-此阶段使用 Google Search 能力对网页内容进行结构化提取。
-
-**英文原文 (Template):**
-
-```fillcard
-You are an expert Information Designer. Your goal is to extract the essential structure from a web page to create a clear, educational infographic.
-
-Analyze the content at this URL: [URL]
-
-TARGET LANGUAGE: [Language].
-
-Provide a structured breakdown specifically designed for visual representation in the TARGET LANGUAGE:
-1. INFOGRAPHIC HEADLINE: The core topic in 5 words or less (in this language).
-2. KEY TAKEAWAYS: The 3 to 5 most important distinct points, steps, or facts (in this language). THESE WILL BE THE MAIN SECTIONS OF THE IMAGE.
-3. SUPPORTING DATA: Any specific numbers, percentages, or very short quotes that add credibility.
-4. VISUAL METAPHOR IDEA: Suggest ONE simple visual concept that best fits this content (e.g., "a roadmap with milestones", "a funnel", "three contrasting pillars", "a circular flowchart").
-
-Keep the output concise and focused purely on what should be ON the infographic. Ensure all content is in the specified language.
-```
-
-
-
-**中文翻译:**
-
-```fillcard
-你是一位专家级的信息设计师。你的目标是从网页中提取核心结构，以创建一个清晰、具有教育意义的信息图。
-
-分析此 URL 的内容：[URL]
-
-目标语言：[语言]。
-
-提供一个专门为视觉呈现设计的结构化分解（使用该目标语言）：
-1. 信息图标题：5 个词以内的核心主题（使用该目标语言）。
-2. 核心要点：3 到 5 个最重要的不同观点、步骤或事实（使用该目标语言）。这些将作为图像的主要板块。
-3. 支持数据：任何增加可信度的具体数字、百分比或极短的引用。
-4. 视觉隐喻创意：建议一个最适合此内容的简单视觉概念（例如：“带里程碑的路线图”、“漏斗”、“三个对比鲜明的支柱”、“圆形流程图”）。
-
-保持输出简洁，纯粹专注于应该出现在信息图上的内容。确保所有内容均使用上述指定的语言。
-```
-
-<br>
-
-## 第二阶段：视觉渲染
-
-将第一阶段的分析结果转化为最终图像。
-
-**英文原文 (Template):**
-
-```fillcard
-Create a professional, high-quality educational infographic based strictly on this structured content plan:
-
-[Structural Summary] (来自第一阶段的输出)
-
-VISUAL DESIGN RULES:
-- [Style Guidelines] (如：现代社论风、活泼风等)
-- LANGUAGE: The text within the infographic MUST be written in [Language].
-- LAYOUT: MUST follow the "VISUAL METAPHOR IDEA" from the plan above if one was provided.
-- TYPOGRAPHY: Clean, highly readable sans-serif fonts. The "INFOGRAPHIC HEADLINE" must be prominent at the top.
-- CONTENT: Use the actual text from "KEY TAKEAWAYS" in the image. Do not use placeholder text like Lorem Ipsum.
-- GOAL: The image must be informative and readable as a standalone graphic.
-```
-
-
-
-**中文翻译:**
-
-```fillcard
-严格根据以下结构化内容计划，创建一张专业、高质量的教育信息图：
-
-[结构化内容总结]
-
-视觉设计规则：
-- [风格指南]
-- 语言：信息图内的文本必须使用 [语言] 编写。
-- 布局：必须遵循上述计划中的“视觉隐喻创意”（如果提供了）。
-- 字体：整洁、高度可读的无衬线字体。“信息图标题”必须在顶部突出显示。
-- 内容：在图像中使用“核心要点”的实际文本。不要使用 Lorem Ipsum 等占位符文本。
-- 目标：图像必须具有信息量，且作为独立图表时具有可读性。
-```
 
 
 
 
-# 6. NotebookLM Slide Deck System Prompt
+# 5. NotebookLM 幻灯片 Prompt
 
 **英文原文 (Template):**
 
@@ -204,7 +121,7 @@ We have also attached some producer notes below for this slide deck which will h
 
 
 
-# 7. NotebookLM 信息图 Prompt
+# 6. NotebookLM 信息图 Prompt
 
 **英文原文 (Template):**
 
@@ -272,7 +189,7 @@ Rule 4: Handling of source data. All data from the source document MUST be copie
 规则 4：源数据处理。源文档中的所有数据必须逐字复制。不要进行总结或改写。
 ```
 
-# 8. 画廊风
+# 7. 画廊风
 
 ## 深邃画廊
 
