@@ -59,3 +59,15 @@ body {
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
     content: none !important;
 }
+@layer utilities {
+  @keyframes scale {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

@@ -144,7 +144,8 @@ export function NotePage() {
                         {...props}
                         style={style}
                         loading="lazy"
-                        className="block max-w-full h-auto"
+                        className="block max-w-full h-auto max-h-[70vh] cursor-zoom-in transition-transform hover:scale-[1.01]"
+                        onClick={() => setZoomedImage(props.src)}
                     />
                 </span>
             </span>
@@ -218,6 +219,20 @@ export function NotePage() {
     ),
     "fill-card": FillCard as any
   };
+
+  // Image zoom state
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+
+  // Close zoomed image on Escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setZoomedImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
 
   // Mobile TOC drawer state
   const [isTocOpen, setIsTocOpen] = useState(false);
@@ -346,6 +361,31 @@ export function NotePage() {
         isPinned={isTocPinned}
         onTogglePin={handleTogglePin}
       />
+      {/* Lightbox Overlay */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8 cursor-zoom-out transition-opacity duration-300"
+          onClick={() => setZoomedImage(null)}
+        >
+          <div 
+            className="relative max-w-full max-h-full border-4 border-black bg-white shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] overflow-hidden animate-[scale_0.2s_ease-out]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={zoomedImage} 
+              alt="Zoomed" 
+              className="max-w-[95vw] max-h-[95vh] h-auto w-auto object-contain cursor-zoom-out"
+              onClick={() => setZoomedImage(null)}
+            />
+            <button 
+              className="absolute top-4 right-4 bg-white border-2 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all cursor-pointer"
+              onClick={() => setZoomedImage(null)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
