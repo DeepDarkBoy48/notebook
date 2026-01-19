@@ -11,6 +11,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="category/:category" element={<CategoryPage />} />
         <Route path="note/:category/:slug" element={<NotePage />} />
+        <Route path="n/:id" element={<NotePage />} />
       </Route>
     </Routes>
   )

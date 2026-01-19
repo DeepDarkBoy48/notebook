@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 interface NoteCardProps {
   note: {
+    id: string;
     title: string;
     description: string;
     date: string;
@@ -14,9 +15,16 @@ interface NoteCardProps {
 }
 
 export function NoteCard({ note }: NoteCardProps) {
+  // Use a short URL if the slug contains non-ASCII characters or is too long
+  // This helps avoid extremely long encoded URLs
+  const isSimpleSlug = /^[a-zA-Z0-9-_]+$/.test(note.slug);
+  const noteLink = isSimpleSlug 
+    ? `/note/${note.category}/${note.slug}` 
+    : `/n/${note.id}`;
+
   return (
     <Link 
-      to={`/note/${note.category}/${note.slug}`}
+      to={noteLink}
       className="group block h-full isolate"
     >
       <div className="h-full bg-white border-4 border-black transition-all duration-200 hover:-translate-y-2 hover:-translate-x-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col relative z-10">

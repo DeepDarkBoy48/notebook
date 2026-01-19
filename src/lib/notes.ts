@@ -2,6 +2,7 @@
 const modules = import.meta.glob('../notes/**/*.md', { query: '?raw', import: 'default', eager: true });
 
 export interface Note {
+  id: string;
   slug: string;
   category: string;
   subcategory?: string;
@@ -67,28 +68,42 @@ function parseFrontmatter(text: string) {
   return { data, content, extractedDescription, extractedImage };
 }
 
+// Simple hash function for short IDs
+function stringToHash(str: string): string {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  // Convert to positive hex string and take last 8 chars
+  return Math.abs(hash).toString(16).padStart(8, '0');
+}
+
 export const getAllNotes = (): Note[] => {
   return Object.entries(modules).map(([path, rawContent]) => {
     const { data, content, extractedDescription, extractedImage } = parseFrontmatter(rawContent as string);
     const parts = path.split('/');
-    // path is relative to src/lib, so it looks like: ../notes/Category/Subcategory/File.md
-    // OR ../notes/Category/File.md
-    // We need to handle both cases.
-
-    // parts structure from split on "../notes/...":
-    // [.., notes, Category, File.md] -> length 4
-    // [.., notes, Category, SubCategory, File.md] -> length 5
-
+    
     const filename = parts[parts.length - 1];
     const category = parts[parts.length - (parts.length > 4 ? 3 : 2)];
     const subcategory = parts.length > 4 ? parts[parts.length - 2] : undefined;
-    const slug = filename.replace('.md', '');
+    
+    // Default slug is filename without .md
+    const defaultSlug = filename.replace('.md', '');
+    
+    // Prioritize slug from frontmatter, then use default
+    const slug = data.slug || defaultSlug;
+    
+    // Generate a short ID based on the relative path for stability
+    const id = data.id || stringToHash(path);
 
     return {
+      id,
       slug,
       category,
       subcategory,
-      title: data.title || slug,
+      title: data.title || defaultSlug,
       date: data.date || '',
       description: data.description || extractedDescription,
       image: data.image || extractedImage,
@@ -117,7 +132,14 @@ export const getNotesByCategory = (category: string) => {
 };
 
 export const getNote = (category: string, slug: string) => {
-  return getAllNotes().find(
+  const notes = getAllNotes();
+  
+  // Try to find by ID first (slug might actually be an ID if category is not provided)
+  const byId = notes.find(n => n.id === slug || n.id === category);
+  if (byId) return byId;
+
+  // Then try to find by category and slug
+  return notes.find(
     note => note.category.toLowerCase() === category.toLowerCase() && note.slug === slug
   );
 };

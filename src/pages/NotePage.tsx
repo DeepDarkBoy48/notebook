@@ -12,8 +12,8 @@ import { MermaidBlock } from '../components/MermaidBlock';
 import { CanvasBlock } from '../components/CanvasBlock';
 
 export function NotePage() {
-  const { category, slug } = useParams();
-  const note = getNote(category || '', slug || '');
+  const { id, category, slug } = useParams();
+  const note = id ? getNote('', id) : getNote(category || '', slug || '');
 
   const headings = useMemo(() => {
     if (!note?.content) return [];

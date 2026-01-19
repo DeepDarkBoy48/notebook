@@ -1,6 +1,7 @@
 ---
 title: "AI 代理演进史：Skill、MCP 与 Function Calling 的深度对比与融合"
 date: 2026/01/19
+slug: ai-agent-evolution
 description: "深入解析 AI 代理的三大核心技术：Function Calling 为动作，MCP 为接口，Agent Skill 为方法论。一篇文章帮你理清它们的区别、优势及未来趋势。"
 image: https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/40171a8b2194a5328c7fe6a251d93017.jpeg
 isPublic: 1
