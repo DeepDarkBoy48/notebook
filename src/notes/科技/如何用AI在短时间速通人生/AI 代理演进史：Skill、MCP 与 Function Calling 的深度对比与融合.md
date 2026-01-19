@@ -18,7 +18,7 @@ isPublic: 1
 
 理解这三者最简单的方式，就是把 AI 想象成一名正在厨房忙碌的厨师。
 
-![AI 代理与外部世界交互的三个层级](./image/skill%20vs%20mcp%20vs%20function%20calling/Gemini_Generated_Image_kp7o0kkp7o0kkp7o.jpeg)
+![AI 代理与外部世界交互的三个层级](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/40171a8b2194a5328c7fe6a251d93017.jpeg)
 
 *   **Function Calling（函数调用） = 单一动作**：就像切菜、开火。这是最基础的原子化操作，AI 发出一个指令，外部程序执行一个具体的任务（如“查天气”）。
 *   **MCP（模型上下文协议） = 万能接口/设备库**：就像厨房里的万能插头和各种设备。它建立了一个标准化的连接方式，让厨师（AI）能够轻松连接到冰箱（数据库）、烤箱（Slack）等各种外部资源。
@@ -30,7 +30,7 @@ isPublic: 1
 
 为了更专业地评估这三种技术，我们需要进入它们的底层逻辑。
 
-![Claude 扩展能力深度对比分析](./image/skill%20vs%20mcp%20vs%20function%20calling/Gemini_Generated_Image_x0tij1x0tij1x0ti.png)
+![Claude 扩展能力深度对比分析](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/33558b6be4714dc376bb2630ea5715fc.png)
 
 ### 1. Function Calling：早期的拓荒者
 *   **定义**：允许大模型输出结构化数据以触发外部函数。
@@ -53,7 +53,7 @@ isPublic: 1
 
 选择合适的技术方案，取决于你想要解决的问题复杂度。
 
-![Claude 扩展能力最佳实践与编程外场景](./image/skill%20vs%20mcp%20vs%20function%20calling/Gemini_Generated_Image_fydnzefydnzefydn.png)
+![Claude 扩展能力最佳实践与编程外场景](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/63f6e8059c5a052b5702ef1cb9c74ac2.png)
 
 *   **简单离散任务**：如果你只需要查询天气、做个加法，**Function Calling** 足矣。
 *   **管理个人/企业知识库**：如果你需要 AI 能够直接读取 Notion、GitHub 或本地文件，部署 **MCP Server** 是最佳选择。
@@ -67,7 +67,7 @@ isPublic: 1
 
 如果你也想让你的 AI 变得更聪明，不妨现在就开始构建你的第一个 Skill。在 Antigravity 等先进的编程助手中，这只需要简单的四个步骤：
 
-![构建你的第一个 Skill 微型指南](./image/skill%20vs%20mcp%20vs%20function%20calling/Gemini_Generated_Image_lthq1slthq1slthq.png)
+![构建你的第一个 Skill 微型指南](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/4ba38af1d06d03097696db439d378550.png)
 
 1.  **创建文件夹**：在项目的 `.claude/skills/` 目录下创建一个新目录。
 2.  **编写定义**：在其中创建 `SKILL.md`，用自然语言描述它的触发条件和功能。
@@ -82,7 +82,7 @@ isPublic: 1
 
 想要深入了解更多？以下是为你精选的必备知识库，涵盖了从官方入门到专家级原理的全部内容：
 
-![进阶资源导航](./image/skill%20vs%20mcp%20vs%20function%20calling/Gemini_Generated_Image_95c78f95c78f95c7.png)
+![进阶资源导航](https://img.nanopixel.uk/cdn-cgi/image/format=webp,quality=85/https://img.nanopixel.uk/picgo/ee5d4939b1bc309a45a5f5a33f3421dd.png)
 
 ### 1. 官方核心文档 (Official Core)
 *   **[Anthropic: Agent Skills Overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)**：全面介绍 Agent Skills 的定义、结构和使用方法。
