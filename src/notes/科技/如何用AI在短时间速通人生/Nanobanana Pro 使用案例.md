@@ -259,8 +259,7 @@ STYLE AND VISUAL GUIDELINES (CRITICAL):
 2. TYPOGRAPHY: 
    - For English: Use classic sans-serif fonts like Helvetica or Roboto.
    - For Chinese (if applicable): Use "Source Han Sans Heavy" (or similar heavy bold) for headings and clean sans-serif for body text.
-3. COLOR ENCODING: Use a "High-Contrast Accent" system. Base colors: Black, White, Gray. Accent colors: [Accent Color: Neon Green/Bright Orange] to highlight "Action Items" and "Tools".
-4. LAYOUT DENSITY: Since this is a reading-type deck, the body text can be slightly denser, but you MUST use bolding, highlights, and bullet points to break up large blocks of text, ensuring information can be gathered via scanning.
+3. LAYOUT DENSITY: Since this is a reading-type deck, the body text can be slightly denser, but you MUST use bolding, highlights, and bullet points to break up large blocks of text, ensuring information can be gathered via scanning.
 
 You are now writing an outline for this slide deck described below. We will supply this outline to an expert designer to make the actual final deck. The slide content should be in [Language]. The placeholders should be left in this specified language. Once the slide deck outline/plan is confirmed by the user, you must ask the user whether to proceed with generating the actual slides. Upon confirmation, use the image generation tool to create the slides one by one.
 
@@ -285,8 +284,7 @@ We have also attached some producer notes below for this slide deck which will h
 2. 字体运用：
    - 英文：使用经典的无衬线字体，如 Helvetica 或 Roboto。
    - 中文：标题建议使用“思源黑体 Heavy”或类似粗体，正文使用清晰易读的无衬线字体。
-3. 颜色编码：建议使用一套“高亮色”来区分重点。底色：黑白灰。高亮色：[高亮色：荧光绿/亮橙色] 用于标记“Action Item”（行动项）和“Tools”（工具）。
-4. 排版密度：由于是阅读型 PPT，正文可以适当多一点，但必须利用加粗、高亮、项目符号来打破大段文字，确保用户即便扫视也能快速获取信息。
+3. 排版密度：由于是阅读型 PPT，正文可以适当多一点，但必须利用加粗、高亮、项目符号来打破大段文字，确保用户即便扫视也能快速获取信息。
 
 你现在正在为下面描述的这份幻灯片编写大纲。我们将把这份大纲交给专业设计师制作最终成片。幻灯片内容应使用 [语言]。占位符应保留为该语言。在用户确认好幻灯片大纲/方案后，你必须询问用户是否开始制作幻灯片。用户确认后，使用生图工具按顺序一张一张地画出幻灯片（Slide）。
 
@@ -309,8 +307,7 @@ We have also attached some producer notes below for this slide deck which will h
 2. TYPOGRAPHY: 
    - For English: Use classic sans-serif fonts like Helvetica or Roboto.
    - For Chinese (if applicable): Use "Source Han Sans Heavy" (or similar heavy bold) for headings and clean sans-serif for body text.
-3. COLOR ENCODING: Use a "High-Contrast Accent" system. Base colors: Black, White, Gray. Accent colors: [Accent Color: Neon Green/Bright Orange] to highlight "Action Items" and "Tools".
-4. LAYOUT DENSITY: For reading-type content, the body text can be denser, but you MUST use bolding, highlights, and bullet points to break up large blocks of text, ensuring information can be gathered via scanning.
+3. LAYOUT DENSITY: For reading-type content, the body text can be denser, but you MUST use bolding, highlights, and bullet points to break up large blocks of text, ensuring information can be gathered via scanning.
 ```
 
 **中文版指令 (视觉修正包):**
@@ -321,6 +318,5 @@ We have also attached some producer notes below for this slide deck which will h
 2. 字体运用：
    - 英文：使用经典的无衬线字体，如 Helvetica 或 Roboto。
    - 中文：标题建议使用“思源黑体 Heavy”或类似粗体，正文使用清晰易读的无衬线字体。
-3. 颜色编码：建议使用一套“高亮色”来区分重点。底色：黑白灰。高亮色：[高亮色：荧光绿/亮橙色] 用于标记“Action Item”（行动项）和“Tools”（工具）。
-4. 排版密度：对于阅读型内容，正文可以适当多一点，但必须利用加粗、高亮、项目符号来打破大段文字，确保用户即便扫视也能快速获取信息。
+3. 排版密度：对于阅读型内容，正文可以适当多一点，但必须利用加粗、高亮、项目符号来打破大段文字，确保用户即便扫视也能快速获取信息。
 ```
